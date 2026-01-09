@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Sushi 101 — Wholly Rolly!</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body data-page="sushi101">
+  <header class="nav">
+    <div class="container nav-inner">
+      <a class="brand" href="index.html" aria-label="Home">
+        <span class="brand-badge" aria-hidden="true"></span>
+        <span data-t="brand_name">Wholly Rolly!</span>
+      </a>
+      <nav class="nav-links" aria-label="Primary">
+        <a href="index.html">Home</a>
+        <a href="menu.html">Menu</a>
+        <a href="order.html">Order</a>
+        <a href="sushi-101.html">Sushi 101</a>
+        <a href="sushi-cuts-quality.html">Cuts & Quality</a>
+        <a href="sushi-aging-rice-nori.html">Aging, Rice & Nori</a>
+        <a href="about-location.html">About & Location</a>
+      </nav>
+      <a class="cta" data-a="order_url" data-attr="href" target="_blank" rel="noopener">
+        <span class="dot" aria-hidden="true"></span>
+        <span data-t="home_cta_primary">Order Online</span>
+      </a>
+      <a class="cta mobile-cta" data-a="order_url" data-attr="href" target="_blank" rel="noopener">
+        <span class="dot" aria-hidden="true"></span>
+        Order
+      </a>
+    </div>
+  </header>
+
+  <main class="container">
+
+    <section class="pagehead">
+      <h1 data-t="s101_title"></h1>
+      <p data-t="s101_subtitle"></p>
+    </section>
+
+    <section class="section">
+      <div class="photo" data-bg="sushi101_banner" data-placeholder="Drop a Sushi 101 banner photo in assets/sushi101.jpg" style="min-height:260px;"></div>
+    </section>
+
+    <section class="section">
+      <h2>Start here</h2>
+      <div class="grid3" id="s101-cards"></div>
+    </section>
+
+    <section class="limited-cuts card" id="limited-cuts">
+      <div class="limited-cuts__header">
+        <h2 data-t="lc_hook"></h2>
+        <p class="muted">A quick story from our chibi instructors ✨</p>
+      </div>
+
+      <div class="limited-cuts__grid">
+        <div class="chibi chibi--chef">
+          <div class="chibi__avatar" data-bg="chibi_chef" data-placeholder="assets/chibi_chef.png"></div>
+          <div class="bubble bubble--left">
+            <div class="bubble__title" data-t="lc_b1_title"></div>
+            <div class="bubble__text" data-t="lc_b1_text"></div>
+          </div>
+        </div>
+
+        <div class="chibi chibi--assistant">
+          <div class="bubble bubble--right">
+            <div class="bubble__title" data-t="lc_b2_title"></div>
+            <div class="bubble__text" data-t="lc_b2_text"></div>
+          </div>
+          <div class="chibi__avatar" data-bg="chibi_sidekick" data-placeholder="assets/chibi_sidekick.png"></div>
+        </div>
+
+        <div class="chibi chibi--chef">
+          <div class="chibi__avatar" data-bg="chibi_chef" data-placeholder="assets/chibi_chef.png"></div>
+          <div class="bubble bubble--left">
+            <div class="bubble__title" data-t="lc_b3_title"></div>
+            <div class="bubble__text" data-t="lc_b3_text"></div>
+          </div>
+        </div>
+
+        <div class="limited-cuts__footer">
+          <span class="spark" aria-hidden="true">✨</span>
+          <span data-t="lc_footer"></span>
+          <span class="spark" aria-hidden="true">✨</span>
+        </div>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <div class="divider"></div>
+      <div style="display:flex; gap:14px; flex-wrap:wrap; justify-content:space-between; align-items:center;">
+        <div>© <span data-year></span> <span data-t="brand_name">Wholly Rolly!</span> • <span data-t="brand_domain">whollyrolly.com</span></div>
+        <div style="display:flex; gap:12px; flex-wrap:wrap;">
+          <a href="menu.html">Menu</a>
+          <a href="sushi-101.html">Sushi 101</a>
+          <a href="about-location.html">Location</a>
+        </div>
+      </div>
+    </footer>
+  </main>
+
+  <script src="site-data.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>

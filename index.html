@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Wholly Rolly! — Sushi</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body data-page="home">
+  <header class="nav">
+    <div class="container nav-inner">
+      <a class="brand" href="index.html" aria-label="Home">
+        <span class="brand-badge" aria-hidden="true"></span>
+        <span data-t="brand_name">Wholly Rolly!</span>
+      </a>
+      <nav class="nav-links" aria-label="Primary">
+        <a href="index.html">Home</a>
+        <a href="menu.html">Menu</a>
+        <a href="order.html">Order</a>
+        <a href="sushi-101.html">Sushi 101</a>
+        <a href="sushi-cuts-quality.html">Cuts & Quality</a>
+        <a href="sushi-aging-rice-nori.html">Aging, Rice & Nori</a>
+        <a href="about-location.html">About & Location</a>
+      </nav>
+      <a class="cta" data-a="order_url" data-attr="href" target="_blank" rel="noopener">
+        <span class="dot" aria-hidden="true"></span>
+        <span data-t="home_cta_primary">Order Online</span>
+      </a>
+      <a class="cta mobile-cta" data-a="order_url" data-attr="href" target="_blank" rel="noopener">
+        <span class="dot" aria-hidden="true"></span>
+        Order
+      </a>
+    </div>
+  </header>
+
+  <main class="container">
+
+    <section class="hero">
+      <div class="hero-grid">
+        <div class="card hero-main">
+          <div class="kicker">
+            <span class="pill" data-t="brand_kicker_left">Fresh • Crafted • Fun</span>
+            <span style="color:rgba(183,192,216,.95); font-weight:900;" data-t="brand_kicker_right">Sushi Bar</span>
+          </div>
+          <h1 class="h1" data-t="home_headline">Sushi that hits different.</h1>
+          <p class="lead" data-t="home_subhead"></p>
+
+          <div class="actions">
+            <a class="btn btn-primary" data-a="order_url" data-attr="href" target="_blank" rel="noopener">
+              <span data-t="home_cta_primary">Order Online</span>
+            </a>
+            <a class="btn" href="menu.html"><span data-t="home_cta_secondary">View Menu</span></a>
+            <a class="btn" href="about-location.html"><span data-t="home_cta_third">Get Directions</span></a>
+          </div>
+
+          <div class="divider"></div>
+          <div class="grid3" id="home-features"></div>
+        </div>
+
+        <aside class="card hero-side">
+          <div class="photo" data-bg="home_side" data-placeholder="Drop a sushi photo in assets/hero_side.jpg"></div>
+          <div class="statgrid">
+            <div class="stat">
+              <div class="big" data-t="home_stat1_title"></div>
+              <div class="small" data-t="home_stat1_text"></div>
+            </div>
+            <div class="stat">
+              <div class="big" data-t="home_stat2_title"></div>
+              <div class="small" data-t="home_stat2_text"></div>
+            </div>
+          </div>
+          <div class="badge-row" id="home-badges"></div>
+        </aside>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>Featured</h2>
+      <p>These are placeholders—edit them in <strong>site-data.js</strong> anytime.</p>
+      <div class="grid3" id="home-featured"></div>
+    </section>
+
+    <section class="section">
+      <h2>Sushi 101</h2>
+      <p>Want customers to understand quality? We make it fun. Chibi instructors included.</p>
+      <div class="actions" style="margin-top:12px;">
+        <a class="btn btn-primary" href="sushi-101.html">Go to Sushi 101</a>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <div class="divider"></div>
+      <div style="display:flex; gap:14px; flex-wrap:wrap; justify-content:space-between; align-items:center;">
+        <div>© <span data-year></span> <span data-t="brand_name">Wholly Rolly!</span> • <span data-t="brand_domain">whollyrolly.com</span></div>
+        <div style="display:flex; gap:12px; flex-wrap:wrap;">
+          <a href="menu.html">Menu</a>
+          <a href="sushi-101.html">Sushi 101</a>
+          <a href="about-location.html">Location</a>
+        </div>
+      </div>
+    </footer>
+  </main>
+
+  <script src="site-data.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
