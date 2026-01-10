@@ -12,6 +12,26 @@
   --max: 1120px;
   --font: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial;
 }
+.education-image {
+  width: 100%;
+  max-width: 520px;
+  margin: 32px auto;
+  display: block;
+
+  border-radius: 18px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.45);
+}
+@media (max-width: 768px) {
+  .education-row {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+
+  .education-image {
+    max-width: 100%;
+  }
+}
+
 
 *{box-sizing:border-box}
 html,body{margin:0;padding:0;color:var(--text);font-family:var(--font);}
