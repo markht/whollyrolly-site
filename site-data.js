@@ -7,15 +7,15 @@ window.WR_SITE_DATA = {
     "kicker_right": "Sushi Bar"
   },
   "links": {
-    "order_url": "PASTE_YOUR_CAKE_ORDER_LINK_HERE",
-    "maps_query": "PASTE_YOUR_ADDRESS_HERE",
-    "phone": "PASTE_PHONE_HERE",
+    "order_url": cake.net/11566006,
+    "maps_query": "1525 N Main St #110B Bountiful Utah",
+    "phone": "801-891-9637",
     "email": "PASTE_EMAIL_HERE",
     "instagram": "@PASTE_HANDLE_HERE"
   },
   "location": {
-    "address_line1": "PASTE_ADDRESS_LINE_1",
-    "address_line2": "City, UT ZIP",
+    "address_line1": "1525 N Main St #110B",
+    "address_line2": "Bountiful, UT 84010",
     "hours_lines": [
       "Mon\u2013Thu: \u2014",
       "Fri\u2013Sat: \u2014",
