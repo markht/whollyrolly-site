@@ -1,3 +1,11 @@
+.topbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 14px;
+  flex-wrap: wrap;            /* helps prevent overflow */
+}
+
 :root{
   --bg:#07080b;
   --panel:#0e1117;
