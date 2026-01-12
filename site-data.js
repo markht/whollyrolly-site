@@ -31,6 +31,9 @@ const CAKE_ORDER_URL = "https://cake.net/11566006";
 const RESTAURANT_ADDRESS = "1525 N Main St #110B Bountiful UT 84010";
 const GOOGLE_MAPS_URL =
   "https://www.google.com/maps/search/?api=1&query=1525+N+Main+St+%23110B+Bountiful+UT+84010";
+window.SITE_DATA.images = {
+  logo: "assets-logo.png",
+};
 
 window.WR_SITE_DATA = {
   "brand": {
