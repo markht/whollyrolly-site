@@ -233,6 +233,21 @@
       el.scrollIntoView({behavior:'smooth', block:'start'});
     }
   });
+  function initNavToggle(){
+    const toggle = document.querySelector('.hamburger');
+    const nav = document.querySelector('.nav-links');
+    if(!toggle || !nav) return;
+    toggle.addEventListener('click', ()=>{
+      const open = nav.classList.toggle('open');
+      toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+    });
+    window.addEventListener('resize', ()=>{
+      if(window.innerWidth > 900){
+        if(nav.classList.contains('open')) nav.classList.remove('open');
+        toggle.setAttribute('aria-expanded', 'false');
+      }
+    });
+  }
 
-  document.addEventListener("DOMContentLoaded", applyData);
+  document.addEventListener("DOMContentLoaded", ()=>{ applyData(); initNavToggle(); });
 })();
