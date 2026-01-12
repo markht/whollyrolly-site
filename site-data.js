@@ -1,3 +1,29 @@
+/* ===========================
+   SITE DATA (single source of truth)
+   Put links/addresses here so every page stays consistent.
+   =========================== */
+
+window.SITE_DATA = window.SITE_DATA || {};
+
+window.SITE_DATA.brand = {
+  name: "Wholly Rolly!",
+};
+
+window.SITE_DATA.links = {
+  // Online ordering (Cake)
+  orderUrl: "https://cake.net/11566006",
+};
+
+window.SITE_DATA.location = {
+  // Restaurant address
+  addressLine: "1525 N Main St #110B Bountiful UT 84010",
+};
+
+window.SITE_DATA.images = {
+  // Keep logo in /assets (recommended)
+  logo: "assets/logo.png",
+};
+
 // External links
 const CAKE_ORDER_URL = "https://cake.net/11566006";
 
