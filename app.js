@@ -251,3 +251,136 @@
 
   document.addEventListener("DOMContentLoaded", ()=>{ applyData(); initNavToggle(); });
 })();
+/* ===========================
+   APP BOOTSTRAP
+   - Injects a shared header/footer into every page
+   - Handles mobile hamburger toggle
+   =========================== */
+
+(function () {
+  // ---- Helper: safe selector ----
+  const $ = (sel, root = document) => root.querySelector(sel);
+
+  // ---- Read shared config (from site-data.js) ----
+  const data = window.SITE_DATA || {};
+  const brandName = data.brand?.name || "Wholly Rolly!";
+  const orderUrl = data.links?.orderUrl || "#";
+  const addressLine = data.location?.addressLine || "";
+  const logoSrc = data.images?.logo || "";
+
+  /* ===========================
+     HEADER TEMPLATE
+     - Uses data attributes for a reliable toggle state
+     - aria-* improves accessibility and mobile behavior
+     =========================== */
+  const headerHTML = `
+    <header class="site-header" data-menu="closed">
+      <div class="site-header__inner">
+        <a class="brand" href="index.html" aria-label="${brandName} home">
+          ${logoSrc ? `<img class="brand__logo" src="${logoSrc}" alt="${brandName} logo">` : ""}
+          <span class="brand__name">${brandName}</span>
+        </a>
+
+        <!-- Hamburger button: only visible on small screens via CSS -->
+        <button class="nav-toggle" type="button"
+          aria-label="Open menu"
+          aria-expanded="false"
+          aria-controls="site-nav">
+          <span class="nav-toggle__bar"></span>
+          <span class="nav-toggle__bar"></span>
+          <span class="nav-toggle__bar"></span>
+        </button>
+
+        <nav id="site-nav" class="site-nav" aria-label="Primary">
+          <a class="site-nav__link" href="menu.html">Menu</a>
+          <a class="site-nav__link" href="order.html">Order</a>
+          <a class="site-nav__link" href="sushi-101.html">Sushi 101</a>
+          <a class="site-nav__link" href="about-location.html">Location</a>
+
+          <!-- Primary CTA: always points to Cake -->
+          <a class="site-nav__cta" href="${orderUrl}" target="_blank" rel="noopener">Order Online</a>
+        </nav>
+      </div>
+    </header>
+  `;
+
+  /* ===========================
+     FOOTER TEMPLATE
+     - Shares address + includes order link again
+     =========================== */
+  const footerHTML = `
+    <footer class="site-footer">
+      <div class="site-footer__inner">
+        <div class="site-footer__brand">${brandName}</div>
+        ${addressLine ? `<div class="site-footer__address">${addressLine}</div>` : ""}
+        <div class="site-footer__links">
+          <a href="${orderUrl}" target="_blank" rel="noopener">Order (Cake)</a>
+        </div>
+      </div>
+    </footer>
+  `;
+
+  /* ===========================
+     INJECT HEADER/FOOTER
+     - Requires <div id="site-header"></div> and <div id="site-footer"></div> in HTML
+     =========================== */
+  function injectSharedLayout() {
+    const headerMount = $("#site-header");
+    const footerMount = $("#site-footer");
+
+    if (headerMount) headerMount.innerHTML = headerHTML;
+    if (footerMount) footerMount.innerHTML = footerHTML;
+  }
+
+  /* ===========================
+     MOBILE MENU TOGGLE
+     - Toggles data-menu="open|closed"
+     - Updates aria-expanded for accessibility
+     - Closes menu on link click (mobile)
+     =========================== */
+  function setupMobileMenu() {
+    const header = $(".site-header");
+    if (!header) return;
+
+    const toggleBtn = $(".nav-toggle", header);
+    const nav = $("#site-nav", header);
+
+    if (!toggleBtn || !nav) return;
+
+    const setState = (state) => {
+      header.setAttribute("data-menu", state);
+      const isOpen = state === "open";
+      toggleBtn.setAttribute("aria-expanded", String(isOpen));
+      toggleBtn.setAttribute("aria-label", isOpen ? "Close menu" : "Open menu");
+    };
+
+    toggleBtn.addEventListener("click", () => {
+      const current = header.getAttribute("data-menu") || "closed";
+      setState(current === "open" ? "closed" : "open");
+    });
+
+    // Close after clicking a nav link on mobile
+    nav.addEventListener("click", (e) => {
+      const link = e.target.closest("a");
+      if (!link) return;
+      setState("closed");
+    });
+
+    // Close if you resize from mobile to desktop
+    window.addEventListener("resize", () => {
+      if (window.innerWidth >= 900) setState("closed");
+    });
+
+    // Default closed
+    setState("closed");
+  }
+
+  /* ===========================
+     INIT
+     =========================== */
+  document.addEventListener("DOMContentLoaded", () => {
+    injectSharedLayout();
+    setupMobileMenu();
+  });
+})();
+
