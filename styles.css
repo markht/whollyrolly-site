@@ -74,6 +74,9 @@ img{max-width:100%;display:block}
   border-radius:10px;
   box-shadow: var(--shadow);
 }
+@media (max-width: 900px){
+  .brand-logo{ height:46px; }
+}
 @media (max-width: 520px){
   .brand-logo{ height:30px; }
   .brand span[data-t="brand_name"]{ display:none; }
@@ -120,7 +123,7 @@ img{max-width:100%;display:block}
 .hamburger .hamburger-lines::after{ transform: translateY(6px); }
 
 @media (max-width: 900px){
-  .hamburger{ display:inline-flex; }
+  .hamburger{ display:inline-flex; z-index:30; background: rgba(255,255,255,.02); }
   .nav-links.open{
     display:flex; flex-direction:column; position:absolute; top:100%; left:0; right:0;
     padding:12px 18px; gap:8px; background: rgba(7,8,11,.92); border-bottom:1px solid var(--line); z-index:19;
