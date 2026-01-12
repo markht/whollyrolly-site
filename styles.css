@@ -469,6 +469,13 @@ small{color:var(--muted);}
   display: grid;
   gap: 8px;
 }
+html, body { overflow-x: hidden; }
+
+.site-nav, nav ul {
+  flex-wrap: wrap;
+  white-space: normal;
+}
+
 
 .site-footer__brand {
   font-weight: 800;
