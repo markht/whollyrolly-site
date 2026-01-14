@@ -60,7 +60,11 @@ img{max-width:100%;display:block}
   background: rgba(7,8,11,.55);
   border-bottom:1px solid var(--line);
 }
-.nav-inner{
+.nav-inner{<!-- [Mobile hamburger] Visible under 900px; toggles the nav dropdown -->
+<button class="hamburger" type="button" aria-label="Open menu" aria-expanded="false">
+  <span class="hamburger-lines"></span>
+</button>
+
   display:flex; align-items:center; justify-content:space-between;
   padding:14px 0;
   gap: 10px;
