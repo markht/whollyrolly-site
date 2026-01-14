@@ -1,78 +1,35 @@
-<!-- Load site data first, then app logic -->
-<script src="site-data.js"></script>
-<script src="app.js"></script>
-
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-
-<!-- Shared header mount: app.js injects header here -->
-<div id="site-header"></div>
-
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Cuts & Quality — Wholly Rolly!</title>
+  <title>Cuts &amp; Quality — Wholly Rolly!</title>
   <link rel="stylesheet" href="styles.css" />
 </head>
-<body data-page="cuts">
-  <header class="nav">
-    <div class="container nav-inner">
-      <a class="brand" href="index.html" aria-label="Home">
-        <img class="brand-logo" src="assets/logo.png" alt="Wholly Rolly! logo" />
-        <!--<span data-t="brand_name">Wholly Rolly!</span>-->
-      </a>
-      <nav class="nav-links" aria-label="Primary">
-        <a href="index.html">Home</a>
-        <a href="menu.html">Menu</a>
-        <a href="order.html">Order</a>
-        <a href="sushi-101.html">Sushi 101</a>
-        <a href="sushi-cuts-quality.html">Cuts & Quality</a>
-        <a href="sushi-aging-rice-nori.html">Aging, Rice & Nori</a>
-        <a href="about-location.html">About & Location</a>
-      </nav>
-      <a class="cta" data-a="order_url" data-attr="href" target="_blank" rel="noopener">
-        <span class="dot" aria-hidden="true"></span>
-        <span data-t="home_cta_primary">Order Online</span>
-      </a>
-      <a class="cta mobile-cta" data-a="order_url" data-attr="href" target="_blank" rel="noopener">
-        <span class="dot" aria-hidden="true"></span>
-        Order
-      </a>
-    </div>
-  </header>
+<body data-page="cuts"> <!-- "cuts" page identifier (used by script to inject sections) -->
+  <!-- Shared header mount -->
+  <div id="site-header"></div>
 
   <main class="container">
-
     <section class="pagehead">
       <h1 data-t="cuts_title"></h1>
       <p data-t="cuts_subtitle"></p>
     </section>
 
     <section class="section">
-      <div class="grid3" id="cuts-sections"></div>
+      <div class="grid3" id="cuts-sections"></div> <!-- Content sections will be injected here -->
       <div class="actions" style="margin-top:14px;">
         <a class="btn" href="sushi-101.html">Back to Sushi 101</a>
-        <a class="btn btn-primary" href="sushi-aging-rice-nori.html">Next: Aging, Rice & Nori</a>
+        <a class="btn btn-primary" href="sushi-aging-rice-nori.html">Aging, Rice &amp; Nori</a>
       </div>
     </section>
 
-    <footer class="footer">
-      <div class="divider"></div>
-      <div style="display:flex; gap:14px; flex-wrap:wrap; justify-content:space-between; align-items:center;">
-        <div>© <span data-year></span> <span data-t="brand_name">Wholly Rolly!</span> • <span data-t="brand_domain">whollyrolly.com</span></div>
-        <div style="display:flex; gap:12px; flex-wrap:wrap;">
-          <a href="menu.html">Menu</a>
-          <a href="sushi-101.html">Sushi 101</a>
-          <a href="about-location.html">Location</a>
-        </div>
-      </div>
-    </footer>
+    <!-- Shared footer mount -->
+    <div id="site-footer"></div>
   </main>
 
   <script src="site-data.js"></script>
   <script src="app.js"></script>
 </body>
 </html>
-<!-- Shared footer mount: app.js injects footer here -->
-<div id="site-footer"></div>
+
