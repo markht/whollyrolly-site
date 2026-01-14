@@ -1,30 +1,29 @@
 /* =========================================
    Wholly Rolly Site Script (single system)
    - Inject shared header/footer into #site-header / #site-footer
-   - Apply WR_SITE_DATA content to data-t / data-a / data-bg
-   - Build Menu + Info sections by data-page
-   - Mobile nav toggle (hamburger) for injected header only
+   - Apply WR_SITE_DATA content to data-t / data-a / data-bg placeholders
+   - Build Menu + Info sections based on page
+   - Mobile nav toggle (hamburger menu) for injected header
    ========================================= */
-
 (function () {
   const DATA = window.WR_SITE_DATA || {};
   const $$ = (sel, root = document) => Array.from(root.querySelectorAll(sel));
   const $ = (sel, root = document) => root.querySelector(sel);
 
   function escapeHtml(s) {
-    return String(s).replace(/[&<>"']/g, (m) => ({
-      "&": "&amp;",
-      "<": "&lt;",
-      ">": "&gt;",
-      '"': "&quot;",
-      "'": "&#39;",
-    }[m]));
+    return String(s).replace(/[&<>"']/g, (m) =>
+      ({
+        "&": "&amp;",
+        "<": "&lt;",
+        ">": "&gt;",
+        '"': "&quot;",
+        "'": "&#39;",
+      }[m])
+    );
   }
 
   /* ===========================
-     Shared Header/Footer injection
-     Uses existing dark theme classes:
-     .nav .nav-inner .nav-links .cta .hamburger
+     Shared Header/Footer Injection
      =========================== */
   function injectSharedLayout() {
     const headerMount = $("#site-header");
@@ -35,6 +34,7 @@
       const orderUrl = DATA.links?.order_url || "#";
       const logoSrc = DATA.images?.logo || "assets/logo.png";
 
+      // Inject the shared header HTML into the header mount point
       headerMount.innerHTML = `
         <header class="nav">
           <div class="container nav-inner">
@@ -77,11 +77,14 @@
     if (footerMount) {
       const brandName = DATA.brand?.name || "Wholly Rolly!";
       const domain = DATA.brand?.domain || "";
+      // Inject the shared footer HTML into the footer mount point
       footerMount.innerHTML = `
         <footer class="footer">
           <div class="divider"></div>
           <div style="display:flex; gap:14px; flex-wrap:wrap; justify-content:space-between; align-items:center;">
-            <div>© <span data-year></span> <span data-t="brand_name">${escapeHtml(brandName)}</span> ${domain ? `• <span data-t="brand_domain">${escapeHtml(domain)}</span>` : ""}</div>
+            <div>© <span data-year></span> <span data-t="brand_name">${escapeHtml(brandName)}</span> ${
+        domain ? `• <span data-t="brand_domain">${escapeHtml(domain)}</span>` : ""
+      }</div>
             <div style="display:flex; gap:12px; flex-wrap:wrap;">
               <a href="menu.html">Menu</a>
               <a href="sushi-101.html">Sushi 101</a>
@@ -94,7 +97,7 @@
   }
 
   /* ===========================
-     Mobile nav toggle (injected header only)
+     Mobile Nav Toggle Behavior
      =========================== */
   function initNavToggle() {
     const header = $(".nav");
@@ -106,11 +109,13 @@
 
     const setExpanded = (open) => btn.setAttribute("aria-expanded", String(open));
 
+    // Toggle the mobile nav open/closed when the hamburger is clicked
     btn.addEventListener("click", () => {
       const open = links.classList.toggle("open");
       setExpanded(open);
     });
 
+    // Close the nav menu when any link is clicked (on mobile)
     links.addEventListener("click", (e) => {
       if (e.target.closest("a")) {
         links.classList.remove("open");
@@ -118,6 +123,7 @@
       }
     });
 
+    // If the window is resized beyond mobile width, ensure nav is closed/reset
     window.addEventListener("resize", () => {
       if (window.innerWidth > 900) {
         links.classList.remove("open");
@@ -129,7 +135,7 @@
   }
 
   /* ===========================
-     Data binding helpers
+     Data binding helper functions
      =========================== */
   function setText(key, value) {
     $$(`[data-t="${key}"]`).forEach((el) => (el.textContent = value ?? ""));
@@ -145,9 +151,9 @@
   function setBg(key, url) {
     $$(`[data-bg="${key}"]`).forEach((el) => {
       if (url && !String(url).includes("PASTE_")) {
-        el.classList.add("has-img");
+        el.classList.add("has-img");                   // Mark element as having a loaded image (for CSS styling)
         el.style.backgroundImage = `url('${url}')`;
-        el.removeAttribute("data-placeholder");
+        el.removeAttribute("data-placeholder");        // Remove placeholder text when image is set
       }
     });
   }
@@ -161,12 +167,12 @@
     const path = (location.pathname.split("/").pop() || "index.html").toLowerCase();
     $$(".nav-links a").forEach((a) => {
       const href = (a.getAttribute("href") || "").toLowerCase();
-      if (href === path) a.classList.add("active");
+      if (href === path) a.classList.add("active");    // Highlight current page link
     });
   }
 
   /* ===========================
-     Builders
+     Page-Specific Content Builders
      =========================== */
   function buildMenu() {
     if (document.body.getAttribute("data-page") !== "menu") return;
@@ -203,8 +209,8 @@
   function buildInfoSections() {
     const page = document.body.getAttribute("data-page");
     const cfg = {
-      cuts: { key: "cuts_quality", id: "cuts-sections" },
-      aging: { key: "aging_rice_nori", id: "aging-sections" },
+      cuts: { key: "cuts_quality", id: "cuts-sections" },      // for sushi-cuts-quality page
+      aging: { key: "aging_rice_nori", id: "aging-sections" }, // for sushi-aging-rice-nori page
     }[page];
 
     if (!cfg) return;
@@ -224,15 +230,18 @@
       .join("");
   }
 
+  /* ===========================
+     Apply Dynamic Data to Page
+     =========================== */
   function applyData() {
-    // Brand
+    // Brand text
     setText("brand_name", DATA.brand?.name || "Wholly Rolly!");
     setText("brand_domain", DATA.brand?.domain || "");
     setText("brand_tagline", DATA.brand?.tagline || "");
     setText("brand_kicker_left", DATA.brand?.kicker_left || "");
     setText("brand_kicker_right", DATA.brand?.kicker_right || "");
 
-    // Links
+    // Links (hrefs and text)
     setAttr("order_url", DATA.links?.order_url || "");
     setAttr("phone_href", DATA.links?.phone ? `tel:${DATA.links.phone}` : "");
     setText("phone_text", DATA.links?.phone || "");
@@ -240,26 +249,24 @@
     setAttr("email_href", DATA.links?.email ? `mailto:${DATA.links.email}` : "");
     setText("instagram_text", DATA.links?.instagram || "");
 
-    // Location
+    // Location details
     setText("loc_line1", DATA.location?.address_line1 || "");
     setText("loc_line2", DATA.location?.address_line2 || "");
     setText("parking_note", DATA.location?.parking_note || "");
-
     const hoursEl = document.getElementById("hours-lines");
     if (hoursEl && Array.isArray(DATA.location?.hours_lines)) {
       hoursEl.innerHTML = DATA.location.hours_lines
         .map((x) => `<div>${escapeHtml(x)}</div>`)
         .join("");
     }
-
     const addr = `${DATA.location?.address_line1 || ""} ${DATA.location?.address_line2 || ""}`.trim();
     const query = encodeURIComponent(
-      addr && !addr.includes("PASTE") ? addr : (DATA.links?.maps_query || "")
+      addr && !addr.includes("PASTE") ? addr : DATA.links?.maps_query || ""
     );
     const mapsUrl = query ? `https://www.google.com/maps/search/?api=1&query=${query}` : "";
     setAttr("maps_url", mapsUrl);
 
-    // Images
+    // Images (set background images for elements with data-bg)
     setBg("home_side", DATA.images?.home_side);
     setBg("menu_banner", DATA.images?.menu_banner);
     setBg("sushi101_banner", DATA.images?.sushi101_banner);
@@ -267,7 +274,7 @@
     setBg("chibi_chef", DATA.images?.chibi_chef);
     setBg("chibi_sidekick", DATA.images?.chibi_sidekick);
 
-    // Home
+    // Home page content
     setText("home_headline", DATA.home?.headline || "");
     setText("home_subhead", DATA.home?.subhead || "");
     setText("home_cta_primary", DATA.home?.cta_primary || "Order Online");
@@ -277,12 +284,12 @@
     setText("home_stat1_text", DATA.home?.stat1_text || "");
     setText("home_stat2_title", DATA.home?.stat2_title || "");
     setText("home_stat2_text", DATA.home?.stat2_text || "");
-
     const badgesEl = document.getElementById("home-badges");
     if (badgesEl && Array.isArray(DATA.home?.badges)) {
-      badgesEl.innerHTML = DATA.home.badges.map((b) => `<span class="badge">${escapeHtml(b)}</span>`).join("");
+      badgesEl.innerHTML = DATA.home.badges
+        .map((b) => `<span class="badge">${escapeHtml(b)}</span>`)
+        .join("");
     }
-
     const featsEl = document.getElementById("home-features");
     if (featsEl && Array.isArray(DATA.home?.features)) {
       featsEl.innerHTML = DATA.home.features
@@ -296,7 +303,6 @@
         )
         .join("");
     }
-
     const featuredEl = document.getElementById("home-featured");
     if (featuredEl && Array.isArray(DATA.home?.featured)) {
       featuredEl.innerHTML = DATA.home.featured
@@ -311,17 +317,16 @@
         .join("");
     }
 
-    // Menu
+    // Menu page content
     setText("menu_intro", DATA.menu?.intro || "");
     setText("menu_sellout_title", DATA.menu?.sellout_note_title || "");
     setText("menu_sellout_text", DATA.menu?.sellout_note_text || "");
 
-    // Order
+    // Order page content
     setText("order_title", DATA.order?.title || "");
     setText("order_subtitle", DATA.order?.subtitle || "");
     setText("order_card_title", DATA.order?.card_title || "");
     setText("order_card_text", DATA.order?.card_text || "");
-
     const stepsEl = document.getElementById("order-steps");
     if (stepsEl && Array.isArray(DATA.order?.steps)) {
       stepsEl.innerHTML = DATA.order.steps
@@ -336,10 +341,9 @@
         .join("");
     }
 
-    // Sushi 101
+    // Sushi 101 page content
     setText("s101_title", DATA.sushi101?.title || "");
     setText("s101_subtitle", DATA.sushi101?.subtitle || "");
-
     const cardsEl = document.getElementById("s101-cards");
     if (cardsEl && Array.isArray(DATA.sushi101?.cards)) {
       cardsEl.innerHTML = DATA.sushi101.cards
@@ -356,7 +360,6 @@
         )
         .join("");
     }
-
     setText("lc_hook", DATA.sushi101?.limited?.hook || "");
     setText("lc_b1_title", DATA.sushi101?.limited?.chef_title || "");
     setText("lc_b1_text", DATA.sushi101?.limited?.chef_text || "");
@@ -366,14 +369,13 @@
     setText("lc_b3_text", DATA.sushi101?.limited?.chef2_text || "");
     setText("lc_footer", DATA.sushi101?.limited?.footer || "");
 
-    // Cuts/Aging/About
+    // Cuts & Aging info pages content
     setText("cuts_title", DATA.cuts_quality?.title || "");
     setText("cuts_subtitle", DATA.cuts_quality?.subtitle || "");
     setText("aging_title", DATA.aging_rice_nori?.title || "");
     setText("aging_subtitle", DATA.aging_rice_nori?.subtitle || "");
     setText("al_title", DATA.about_location?.title || "");
     setText("al_subtitle", DATA.about_location?.subtitle || "");
-
     const aboutEl = document.getElementById("about-blocks");
     if (aboutEl && Array.isArray(DATA.about_location?.about_blocks)) {
       aboutEl.innerHTML = DATA.about_location.about_blocks
@@ -388,16 +390,18 @@
         .join("");
     }
 
+    // Build dynamic sections for Menu and Info pages
     buildMenu();
     buildInfoSections();
     fillYear();
     markActiveNav();
   }
 
+  // Initialize the site after DOM content is loaded
   document.addEventListener("DOMContentLoaded", () => {
-    injectSharedLayout();
-    initNavToggle();
-    applyData();
+    injectSharedLayout();  /* Inject shared header and footer into placeholders */
+    initNavToggle();       /* Initialize hamburger menu functionality */
+    applyData();           /* Populate all dynamic content */
   });
 })();
 
