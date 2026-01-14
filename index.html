@@ -1,12 +1,13 @@
-<!doctype html>
+<!DOCTYPE html> <!-- Ensure HTML5 doctype for standards-compliant rendering -->
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta charset="utf-8" /> <!-- Character encoding -->
+  <meta name="viewport" content="width=device-width, initial-scale=1" /> <!-- Responsive viewport -->
   <title>Wholly Rolly! — Sushi</title>
   <link rel="stylesheet" href="styles.css" />
 </head>
-<body data-page="home">
+<body data-page="home"> <!-- "home" identifies this page for dynamic content -->
+  <!-- Shared header mount (injected via app.js) -->
   <div id="site-header"></div>
 
   <main class="container">
@@ -25,12 +26,16 @@
             <a class="btn btn-primary" data-a="order_url" data-attr="href" target="_blank" rel="noopener">
               <span data-t="home_cta_primary">Order Online</span>
             </a>
-            <a class="btn" href="menu.html"><span data-t="home_cta_secondary">View Menu</span></a>
-            <a class="btn" href="about-location.html"><span data-t="home_cta_third">Get Directions</span></a>
+            <a class="btn" href="menu.html">
+              <span data-t="home_cta_secondary">View Menu</span>
+            </a>
+            <a class="btn" href="about-location.html">
+              <span data-t="home_cta_third">Get Directions</span>
+            </a>
           </div>
 
           <div class="divider"></div>
-          <div class="grid3" id="home-features"></div>
+          <div class="grid3" id="home-features"></div> <!-- Features will be injected here -->
         </div>
 
         <aside class="card hero-side">
@@ -45,7 +50,7 @@
               <div class="small" data-t="home_stat2_text"></div>
             </div>
           </div>
-          <div class="badge-row" id="home-badges"></div>
+          <div class="badge-row" id="home-badges"></div> <!-- Badges will be injected here -->
         </aside>
       </div>
     </section>
@@ -53,7 +58,7 @@
     <section class="section">
       <h2>Featured</h2>
       <p>These are placeholders—edit them in <strong>site-data.js</strong> anytime.</p>
-      <div class="grid3" id="home-featured"></div>
+      <div class="grid3" id="home-featured"></div> <!-- Featured items will be injected -->
     </section>
 
     <section class="section">
@@ -64,11 +69,12 @@
       </div>
     </section>
 
+    <!-- Shared footer mount (injected via app.js) -->
     <div id="site-footer"></div>
   </main>
 
-  <script src="site-data.js"></script>
-  <script src="app.js"></script>
+  <script src="site-data.js"></script> <!-- Load data first for dynamic content -->
+  <script src="app.js"></script>      <!-- Then load script to inject header/footer and apply data -->
 </body>
 </html>
 
