@@ -1,4 +1,4 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="utf-8" />
@@ -6,7 +6,8 @@
   <title>Sushi 101 — Wholly Rolly!</title>
   <link rel="stylesheet" href="styles.css" />
 </head>
-<body data-page="sushi101">
+<body data-page="sushi101"> <!-- "sushi101" page identifier -->
+  <!-- Shared header mount -->
   <div id="site-header"></div>
 
   <main class="container">
@@ -16,24 +17,20 @@
     </section>
 
     <section class="section">
-      <div class="photo" data-bg="sushi101_banner" data-placeholder="Drop a Sushi 101 banner photo in assets/sushi101.jpg" style="min-height:260px;"></div>
+      <!-- Sushi 101 hero/banner image -->
+      <div class="photo has-img" data-bg="sushi101_banner" data-placeholder="Drop a Sushi 101 banner photo in assets/sushi101.jpg" style="min-height:260px;"></div>
     </section>
 
     <section class="section">
       <h2>Start here</h2>
-      <div class="grid3" id="s101-cards"></div>
+      <div class="grid3" id="s101-cards"></div> <!-- Educational topic cards injected here -->
     </section>
 
     <section class="limited-cuts card" id="limited-cuts">
       <div class="limited-cuts__header">
         <h2 data-t="lc_hook"></h2>
         <p class="muted">A quick lesson from our instructors ✨</p>
-
-        <img
-          src="assets/Fish-good-bad-ugly.png"
-          alt="Fish quality comparison showing good, bad, and poor cuts"
-          class="education-image"
-        />
+        <img src="assets/Fish-good-bad-ugly.png" alt="Fish quality comparison showing good, bad, and poor cuts" class="education-image" />
       </div>
 
       <div class="limited-cuts__grid">
@@ -69,6 +66,7 @@
       </div>
     </section>
 
+    <!-- Shared footer mount -->
     <div id="site-footer"></div>
   </main>
 
