@@ -1,8 +1,8 @@
 /* ===========================
    WR SITE DATA (single source of truth)
    Edit this file to update text, menu, links, hours, images.
+   (No structural changes needed here; content keys map to HTML via data-t, data-bg, etc.)
    =========================== */
-
 window.WR_SITE_DATA = {
   brand: {
     name: "Wholly Rolly!",
@@ -231,3 +231,4 @@ window.WR_SITE_DATA = {
     ],
   },
 };
+
