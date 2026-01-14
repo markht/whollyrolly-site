@@ -1,3 +1,31 @@
+/* =========================================
+   MOBILE NAV TOGGLE
+   - Toggles the .open class on .nav-links
+   - Updates aria-expanded for accessibility
+   ========================================= */
+document.addEventListener("DOMContentLoaded", () => {
+  const btn = document.querySelector(".hamburger");
+  const links = document.querySelector(".nav-links");
+  if (!btn || !links) return;
+
+  const setExpanded = (open) => btn.setAttribute("aria-expanded", String(open));
+
+  btn.addEventListener("click", () => {
+    const open = links.classList.toggle("open"); // [show/hide dropdown]
+    setExpanded(open);
+  });
+
+  // [Close after selecting a link on mobile]
+  links.addEventListener("click", (e) => {
+    if (e.target.closest("a")) {
+      links.classList.remove("open");
+      setExpanded(false);
+    }
+  });
+
+  setExpanded(false);
+});
+
 (function(){
   const DATA = window.WR_SITE_DATA || {};
   const $$ = (sel, root=document) => Array.from(root.querySelectorAll(sel));
