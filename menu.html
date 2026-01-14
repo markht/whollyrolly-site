@@ -1,4 +1,4 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="utf-8" />
@@ -6,20 +6,22 @@
   <title>Menu — Wholly Rolly!</title>
   <link rel="stylesheet" href="styles.css" />
 </head>
-<body data-page="menu">
+<body data-page="menu"> <!-- "menu" page identifier for script -->
+  <!-- Shared header mount -->
   <div id="site-header"></div>
 
   <main class="container">
     <section class="pagehead">
       <h1>Menu</h1>
-      <p data-t="menu_intro"></p>
+      <p data-t="menu_intro"></p> <!-- Intro text will be injected from site-data.js -->
     </section>
 
     <section class="section">
-      <div class="photo" data-bg="menu_banner" data-placeholder="Drop a menu banner photo in assets/menu.jpg" style="min-height:260px;"></div>
+      <!-- Hero/banner image container (full image visible on mobile via CSS contain) -->
+      <div class="photo has-img" data-bg="menu_banner" data-placeholder="Drop a menu banner photo in assets/menu.jpg" style="min-height:260px;"></div>
     </section>
 
-    <section class="menu-grid section" id="menu-sections"></section>
+    <section class="menu-grid section" id="menu-sections"></section> <!-- Full menu sections will be injected here -->
 
     <section class="section">
       <div class="card feature">
@@ -28,10 +30,12 @@
       </div>
     </section>
 
+    <!-- Shared footer mount -->
     <div id="site-footer"></div>
   </main>
 
-  <script src="site-data.js"></script>
-  <script src="app.js"></script>
+  <script src="site-data.js"></script> <!-- Include data before script -->
+  <script src="app.js"></script>      <!-- Include main script last -->
 </body>
 </html>
+
