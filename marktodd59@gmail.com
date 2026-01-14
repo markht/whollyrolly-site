@@ -1,11 +1,3 @@
-.topbar {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 14px;
-  flex-wrap: wrap;            /* helps prevent overflow */
-}
-
 :root{
   --bg:#07080b;
   --panel:#0e1117;
@@ -20,29 +12,11 @@
   --max: 1120px;
   --font: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial;
 }
-.education-image {
-  width: 100%;
-  max-width: 520px;
-  margin: 32px auto;
-  display: block;
-
-  border-radius: 18px;
-  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.45);
-}
-@media (max-width: 768px) {
-  .education-row {
-    grid-template-columns: 1fr;
-    text-align: center;
-  }
-
-  .education-image {
-    max-width: 100%;
-  }
-}
-
 
 *{box-sizing:border-box}
 html,body{margin:0;padding:0;color:var(--text);font-family:var(--font);}
+html, body { overflow-x: hidden; }
+
 body{
   background:
     radial-gradient(1200px 600px at 15% 10%, rgba(124,92,255,.22), transparent 55%),
@@ -50,33 +24,29 @@ body{
     radial-gradient(900px 600px at 60% 90%, rgba(255,122,24,.12), transparent 55%),
     var(--bg);
 }
+
 a{color:inherit;text-decoration:none}
 img{max-width:100%;display:block}
 .container{max-width:var(--max); margin:0 auto; padding:0 18px;}
 
+/* ===========================
+   NAV (Injected header uses these)
+   =========================== */
 .nav{
   position:sticky; top:0; z-index:20;
   backdrop-filter: blur(14px);
   background: rgba(7,8,11,.55);
   border-bottom:1px solid var(--line);
 }
-.nav-inner{<!-- [Mobile hamburger] Visible under 900px; toggles the nav dropdown -->
-<button class="hamburger" type="button" aria-label="Open menu" aria-expanded="false">
-  <span class="hamburger-lines"></span>
-</button>
-
+.nav-inner{
   display:flex; align-items:center; justify-content:space-between;
   padding:14px 0;
   gap: 10px;
   position: relative;
 }
+
 .brand{
   display:flex; gap:10px; align-items:center; font-weight:900; letter-spacing:.2px;
-}
-.brand-badge{
-  width:34px; height:34px; border-radius:10px;
-  background: linear-gradient(135deg, var(--accent), var(--accent3));
-  box-shadow: var(--shadow);
 }
 
 .brand-logo{
@@ -93,12 +63,20 @@ img{max-width:100%;display:block}
   .brand-logo{ height:30px; }
   .brand span[data-t="brand_name"]{ display:none; }
 }
+
 .nav-links{
   display:flex; gap:14px; align-items:center; flex-wrap:wrap;
 }
-.nav-links a{color:var(--muted); font-weight:700; font-size:14px; padding:10px 10px; border-radius:12px;}
+.nav-links a{
+  color:var(--muted); font-weight:700; font-size:14px;
+  padding:10px 10px; border-radius:12px;
+}
 .nav-links a:hover{color:var(--text); background: rgba(255,255,255,.05);}
-.nav-links a.active{color:var(--text); background: rgba(255,255,255,.06); border:1px solid rgba(255,255,255,.10);}
+.nav-links a.active{
+  color:var(--text);
+  background: rgba(255,255,255,.06);
+  border:1px solid rgba(255,255,255,.10);
+}
 
 .cta{
   display:inline-flex; align-items:center; justify-content:center; gap:10px;
@@ -110,7 +88,10 @@ img{max-width:100%;display:block}
   white-space: nowrap;
 }
 .cta:hover{transform: translateY(-1px); border-color: rgba(255,255,255,.24);}
-.cta .dot{width:9px;height:9px;border-radius:50%; background: linear-gradient(135deg, var(--accent2), var(--accent3));}
+.cta .dot{
+  width:9px;height:9px;border-radius:50%;
+  background: linear-gradient(135deg, var(--accent2), var(--accent3));
+}
 
 .mobile-cta{display:none;}
 @media (max-width: 900px){
@@ -121,15 +102,18 @@ img{max-width:100%;display:block}
 /* Hamburger button for small screens */
 .hamburger{
   display:none; align-items:center; justify-content:center;
-  width:44px; height:44px; border-radius:10px; border:1px solid rgba(255,255,255,.06);
+  width:44px; height:44px; border-radius:10px;
+  border:1px solid rgba(255,255,255,.06);
   background:transparent; cursor:pointer; padding:6px;
 }
 .hamburger .hamburger-lines{
-  display:block; width:18px; height:2px; background:var(--text); border-radius:2px; position:relative;
+  display:block; width:18px; height:2px; background:var(--text);
+  border-radius:2px; position:relative;
 }
 .hamburger .hamburger-lines::before,
 .hamburger .hamburger-lines::after{
-  content:""; display:block; width:18px; height:2px; background:var(--text); border-radius:2px; position:absolute; left:0;
+  content:""; display:block; width:18px; height:2px; background:var(--text);
+  border-radius:2px; position:absolute; left:0;
 }
 .hamburger .hamburger-lines::before{ transform: translateY(-6px); }
 .hamburger .hamburger-lines::after{ transform: translateY(6px); }
@@ -137,12 +121,19 @@ img{max-width:100%;display:block}
 @media (max-width: 900px){
   .hamburger{ display:inline-flex; z-index:30; background: rgba(255,255,255,.02); }
   .nav-links.open{
-    display:flex; flex-direction:column; position:absolute; top:100%; left:0; right:0;
-    padding:12px 18px; gap:8px; background: rgba(7,8,11,.92); border-bottom:1px solid var(--line); z-index:19;
+    display:flex; flex-direction:column; position:absolute;
+    top:100%; left:0; right:0;
+    padding:12px 18px; gap:8px;
+    background: rgba(7,8,11,.92);
+    border-bottom:1px solid var(--line);
+    z-index:19;
   }
   .nav-links.open a{ padding:10px 12px; border-radius:8px; }
 }
 
+/* ===========================
+   CARDS / LAYOUT
+   =========================== */
 .card{
   background: rgba(14,17,23,.72);
   border:1px solid var(--line);
@@ -203,7 +194,8 @@ img{max-width:100%;display:block}
   color: rgba(243,246,255,.76);
   font-weight:900; font-size:12px;
   padding:8px 10px; border-radius:999px;
-  background: rgba(0,0,0,.35); border:1px solid rgba(255,255,255,.14);
+  background: rgba(0,0,0,.35);
+  border:1px solid rgba(255,255,255,.14);
 }
 
 .statgrid{display:grid; grid-template-columns:1fr 1fr; gap:12px;}
@@ -258,19 +250,18 @@ img{max-width:100%;display:block}
 .item .desc{color:var(--muted); font-size:13px; margin-top:6px; line-height:1.45;}
 .price{color: rgba(243,246,255,.92); font-weight:950; white-space:nowrap;}
 
-.form{padding:18px;}
-input, textarea{
-  width:100%;
-  padding:12px 12px;
-  border-radius:14px;
-  border:1px solid rgba(255,255,255,.14);
-  background: rgba(255,255,255,.03);
-  color:var(--text);
-  outline:none;
+/* Sushi 101 education image */
+.education-image {
+  width: 100%;
+  max-width: 520px;
+  margin: 32px auto;
+  display: block;
+  border-radius: 18px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.45);
 }
-textarea{min-height:120px; resize:vertical;}
-label{display:block; margin:12px 0 6px; color: rgba(243,246,255,.9); font-weight:900; font-size:13px;}
-small{color:var(--muted);}
+@media (max-width: 768px) {
+  .education-image { max-width: 100%; }
+}
 
 /* LIMITED CUTS + CHIBI BUBBLES */
 .limited-cuts { padding: 18px; }
@@ -331,157 +322,3 @@ small{color:var(--muted);}
   .chibi--assistant { grid-template-columns: 1fr 64px; }
   .chibi__avatar { width:64px; height:64px; border-radius:18px; }
 }
-/* ===========================
-   SHARED HEADER / NAV (responsive)
-   Paste near END of styles.css
-   =========================== */
-
-.site-header {
-  position: sticky;
-  top: 0;
-  z-index: 1000;
-  background: white;
-  border-bottom: 1px solid rgba(0,0,0,0.08);
-}
-
-.site-header__inner {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 12px;
-  padding: 12px 16px;
-  max-width: 1200px;
-  margin: 0 auto;
-}
-
-.brand {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  text-decoration: none;
-}
-
-.brand__logo {
-  height: 44px;
-  width: auto;
-  display: block;
-}
-
-.brand__name {
-  font-weight: 700;
-  color: inherit;
-}
-
-/* Desktop nav */
-.site-nav {
-  display: flex;
-  align-items: center;
-  gap: 14px;
-}
-
-.site-nav__link {
-  text-decoration: none;
-  padding: 8px 10px;
-  border-radius: 10px;
-}
-
-.site-nav__cta {
-  text-decoration: none;
-  padding: 10px 12px;
-  border-radius: 12px;
-  font-weight: 700;
-  border: 1px solid rgba(0,0,0,0.15);
-}
-
-/* Hamburger button (hidden on desktop by default) */
-.nav-toggle {
-  display: none;
-  border: 1px solid rgba(0,0,0,0.12);
-  background: transparent;
-  border-radius: 12px;
-  padding: 10px;
-  cursor: pointer;
-}
-
-.nav-toggle__bar {
-  display: block;
-  width: 22px;
-  height: 2px;
-  background: currentColor;
-  margin: 4px 0;
-}
-
-/* ===========================
-   MOBILE: collapse nav into a dropdown
-   Breakpoint can be adjusted if needed
-   =========================== */
-@media (max-width: 899px) {
-  .nav-toggle {
-    display: inline-flex;
-    flex-direction: column;
-    justify-content: center;
-  }
-
-  /* Start hidden on mobile */
-  .site-nav {
-    display: none;
-    position: absolute;
-    left: 0;
-    right: 0;
-    top: 100%;
-    background: white;
-    border-bottom: 1px solid rgba(0,0,0,0.08);
-    padding: 12px 16px;
-    flex-direction: column;
-    align-items: stretch;
-    gap: 8px;
-  }
-
-  /* When header data-menu=open, show it */
-  .site-header[data-menu="open"] .site-nav {
-    display: flex;
-  }
-
-  .site-header__inner {
-    position: relative; /* allows dropdown positioning */
-  }
-
-  .site-nav__link,
-  .site-nav__cta {
-    display: block;
-    text-align: left;
-    width: 100%;
-  }
-
-  .brand__name {
-    display: none; /* optional: remove if you want name next to logo on mobile */
-  }
-}
-
-/* ===========================
-   FOOTER
-   =========================== */
-.site-footer {
-  margin-top: 40px;
-  padding: 24px 16px;
-  border-top: 1px solid rgba(0,0,0,0.08);
-}
-
-.site-footer__inner {
-  max-width: 1200px;
-  margin: 0 auto;
-  display: grid;
-  gap: 8px;
-}
-html, body { overflow-x: hidden; }
-
-.site-nav, nav ul {
-  flex-wrap: wrap;
-  white-space: normal;
-}
-
-
-.site-footer__brand {
-  font-weight: 800;
-}
-
