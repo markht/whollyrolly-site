@@ -1,12 +1,13 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>About & Location — Wholly Rolly!</title>
+  <title>About &amp; Location — Wholly Rolly!</title>
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body data-page="about">
+  <!-- Shared header mount -->
   <div id="site-header"></div>
 
   <main class="container">
@@ -16,19 +17,21 @@
     </section>
 
     <section class="section">
-      <div class="photo" data-bg="about_banner" data-placeholder="Drop an about photo in assets/about.jpg" style="min-height:260px;"></div>
+      <!-- Hero/banner image container for About page -->
+      <div class="photo has-img" data-bg="about_banner" data-placeholder="Drop an about photo in assets/about.jpg" style="min-height:260px;"></div>
     </section>
 
     <section class="section">
       <h2>About</h2>
-      <div class="grid3" id="about-blocks"></div>
+      <div class="grid3" id="about-blocks"></div> <!-- About info blocks injected here -->
     </section>
 
     <section class="section menu-grid">
       <div class="card feature">
         <h2>Find Us</h2>
-        <p><strong data-t="loc_line1"></strong><br>
-           <span style="color:var(--muted)" data-t="loc_line2"></span>
+        <p>
+          <strong data-t="loc_line1"></strong><br>
+          <span style="color:var(--muted)" data-t="loc_line2"></span>
         </p>
 
         <div class="actions" style="margin-top:14px;">
@@ -37,9 +40,8 @@
         </div>
 
         <div class="divider"></div>
-
         <h3>Hours</h3>
-        <div id="hours-lines" style="color:var(--muted); line-height:1.8;"></div>
+        <div id="hours-lines" style="color:var(--muted); line-height:1.8;"></div> <!-- Hours will populate here -->
 
         <div class="divider"></div>
         <h3>Parking</h3>
@@ -55,7 +57,6 @@
         </p>
 
         <div class="divider"></div>
-
         <h3>Order</h3>
         <p style="color:var(--muted);">Order online anytime:</p>
         <div class="actions" style="margin-top:14px;">
@@ -65,6 +66,7 @@
       </div>
     </section>
 
+    <!-- Shared footer mount -->
     <div id="site-footer"></div>
   </main>
 
