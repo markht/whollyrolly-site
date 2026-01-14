@@ -1,13 +1,3 @@
-<!-- Load site data first, then app logic -->
-<script src="site-data.js"></script>
-<script src="app.js"></script>
-
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-
-
-<!-- Shared header mount: app.js injects header here -->
-<div id="site-header"></div>
-
 <!doctype html>
 <html lang="en">
 <head>
@@ -17,63 +7,9 @@
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body data-page="about">
-  <header class="nav">
-    <div class="container nav-inner">
-      <a class="brand" href="index.html" aria-label="Home">
-        <img class="brand-logo" src="assets/logo.png" alt="Wholly Rolly! logo" />
-        <span data-t="brand_name">Wholly Rolly!</span>
-      </a>
-      <header class="topbar">
-  <a class="brand" href="index.html">
-    <img class="brand-logo" src="assets/logo.png" alt="Wholly Rolly! logo">
-    <!-- remove/hide this text if you don’t want it -->
-    <!-- <span class="brand-name">Wholly Rolly!</span> -->
-  </a>
-
-  <button class="hamburger"
-          aria-controls="primary-nav"
-          aria-expanded="false"
-          aria-label="Toggle navigation">
-    <span class="hamburger-lines" aria-hidden="true"></span>
-  </button>
-
-  <nav id="primary-nav" class="nav-links" aria-label="Primary">
-    <a href="index.html">Home</a>
-    <a href="menu.html">Menu</a>
-    <a href="order.html">Order</a>
-    <a href="sushi-101.html">Sushi 101</a>
-    <a href="sushi-cuts-quality.html">Cuts &amp; Quality</a>
-    <a href="sushi-aging-rice-nori.html">Aging, Rice &amp; Nori</a>
-    <a href="about-location.html">About &amp; Location</a>
-  </nav>
-
-  <a class="cta order-cta" href="https://cake.net/11566006" target="_blank" rel="noopener">
-    Order Online
-  </a>
-</header>
-
-      <nav class="nav-links" aria-label="Primary">
-        <a href="index.html">Home</a>
-        <a href="menu.html">Menu</a>
-        <a href="order.html">Order</a>
-        <a href="sushi-101.html">Sushi 101</a>
-        <a href="sushi-cuts-quality.html">Cuts & Quality</a>
-        <a href="sushi-aging-rice-nori.html">Aging, Rice & Nori</a>
-        <a href="about-location.html">About & Location</a>
-      </nav>
-      <a class="cta" data-a="order_url" data-attr="href" target="_blank" rel="noopener">
-        <span class="dot" aria-hidden="true"></span>
-        <span data-t="home_cta_primary">Order Online</span>
-      </a>
-      <a class="cta mobile-cta" data-a="order_url" data-attr="href" target="_blank" rel="noopener">
-        <span class="dot" aria-hidden="true"></span>
-        Order
-      </a>
-    </div>
-  </header>
+  <div id="site-header"></div>
 
   <main class="container">
-
     <section class="pagehead">
       <h1 data-t="al_title"></h1>
       <p data-t="al_subtitle"></p>
@@ -117,37 +53,23 @@
           Email: <a data-a="email_href" data-attr="href"><strong data-t="email_text"></strong></a><br>
           Instagram: <strong data-t="instagram_text"></strong><br>
         </p>
+
         <div class="divider"></div>
+
         <h3>Order</h3>
         <p style="color:var(--muted);">Order online anytime:</p>
         <div class="actions" style="margin-top:14px;">
           <a class="btn btn-primary" data-a="order_url" data-attr="href" target="_blank" rel="noopener">Order with Cake</a>
           <a class="btn" href="menu.html">Menu</a>
         </div>
-        <div class="divider"></div>
-        <h3>Map</h3>
-        <p style="color:var(--muted); margin-bottom:12px;">Tap “Get Directions” for the fastest route.</p>
-        <div class="photo" data-placeholder="Optional: embed map screenshot here" style="min-height:240px;"></div>
       </div>
     </section>
 
-    <footer class="footer">
-      <div class="divider"></div>
-      <div style="display:flex; gap:14px; flex-wrap:wrap; justify-content:space-between; align-items:center;">
-        <div>© <span data-year></span> <span data-t="brand_name">Wholly Rolly!</span> • <span data-t="brand_domain">whollyrolly.com</span></div>
-        <div style="display:flex; gap:12px; flex-wrap:wrap;">
-          <a href="menu.html">Menu</a>
-          <a href="sushi-101.html">Sushi 101</a>
-          <a href="about-location.html">Location</a>
-        </div>
-      </div>
-    </footer>
+    <div id="site-footer"></div>
   </main>
-  <!-- Shared footer mount: app.js injects footer here -->
-<div id="site-footer"></div>
-
 
   <script src="site-data.js"></script>
   <script src="app.js"></script>
 </body>
 </html>
+
