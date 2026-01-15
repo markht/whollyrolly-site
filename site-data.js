@@ -38,7 +38,7 @@ window.WR_SITE_DATA = {
   },
 
   home: {
-    headline: "Sushi that hits different.",
+    headline: "Wholly Nutritious! Wholly Delicoius!.",
     subhead:
       "Premium ingredients, careful technique, and a modern vibe — built for cravings and crafted with care.",
     cta_primary: "Order Online",
@@ -111,7 +111,7 @@ window.WR_SITE_DATA = {
         title: "Drinks",
         items: [
           { name: "Ramune", desc: "Japanese soda (assorted flavors).", price: "$—" },
-          { name: "Iced Tea", desc: "Refreshing and crisp.", price: "$—" },
+          { name: "Calpico", desc: "Refreshing and crisp.", price: "$—" },
           { name: "Water", desc: "Because balance.", price: "$—" },
         ],
       },
