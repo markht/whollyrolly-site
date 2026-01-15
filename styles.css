@@ -390,6 +390,49 @@ img { max-width: 100%; display: block; }
   grid-template-columns: 1fr 1fr;
   gap: 14px;
 }
+/* ===========================
+   CTA BUTTON DISPLAY FIX
+   =========================== */
+
+/* Default (desktop) styles */
+.cta {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  border: 1px solid rgba(255,255,255,.14);
+  padding: 11px 14px;
+  border-radius: 14px;
+  font-weight: 900;
+  letter-spacing: .2px;
+  background: linear-gradient(135deg, rgba(255,122,24,.22), rgba(124,92,255,.16));
+  box-shadow: 0 10px 30px rgba(255,122,24,.10);
+  white-space: nowrap;
+}
+
+.cta:hover {
+  transform: translateY(-1px);
+  border-color: rgba(255,255,255,.24);
+}
+
+.cta .dot {
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--accent2), var(--accent3));
+}
+
+/* Mobile-specific CTA is hidden on desktop by default */
+.mobile-cta {
+  display: none;
+}
+
+/* Media query to toggle visibility */
+@media (max-width: 900px) {
+  .cta { display: none; }              /* Hide full-size button */
+  .mobile-cta { display: inline-flex; }/* Show mobile version */
+}
+
 @media (max-width: 900px) {
   .menu-grid { grid-template-columns: 1fr; }
 }
