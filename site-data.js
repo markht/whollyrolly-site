@@ -7,8 +7,8 @@ window.WR_SITE_DATA = {
   brand: {
     name: "Wholly Rolly!",
     domain: "whollyrolly.com",
-    tagline: "Bold sushi. Beautifully made.",
-    kicker_left: "Fresh • Crafted • Fun",
+    tagline: "Wholly Nutritious! Wholly Delicious!",
+    kicker_left: "Premier • Crafted • Unique",
     kicker_right: "Sushi Bar",
   },
 
@@ -66,7 +66,7 @@ window.WR_SITE_DATA = {
     featured: [
       {
         title: "Signature Nigiri Set",
-        text: "A premium lineup with clean flavor and perfect rice texture.",
+        text: "A premium lineup with clean flavor and perfect Koshihikari rice texture.",
       },
       {
         title: "Chef’s Special Sushi",
@@ -74,7 +74,7 @@ window.WR_SITE_DATA = {
       },
       {
         title: "Classic Roll (done right)",
-        text: "Familiar, but elevated — crisp nori, balanced seasoning, bright finish.",
+        text: "Familiar, but elevated — crisp premium imported nori, balanced seasoning, bright finish.",
       },
     ],
   },
