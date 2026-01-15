@@ -135,7 +135,7 @@ window.WR_SITE_DATA = {
 
   sushi101: {
     title: "Sushi 101",
-    subtitle: "Playful, easy-to-understand sushi education — with chibi instructors.",
+    subtitle: "Playful, easy-to-understand sushi education — with our instructors.",
     cards: [
       {
         title: "Cuts & Quality",
@@ -158,12 +158,12 @@ window.WR_SITE_DATA = {
     ],
     limited: {
       hook: "“Wait… why is my sushi sold out?” 😮🍣",
-      chef_title: "Chibi Chef",
+      chef_title: "Chef Neko and Niko",
       chef_text:
         "Ah! Great question. Some of our sushi is limited each day because we break down whole fish for premium cuts. When a prized cut is gone, it’s gone until the next prep.",
-      sidekick_title: "Chibi Sidekick",
+      sidekick_title: "Niko",
       sidekick_text: "So it’s like… a cow only has so many ribeyes? 🐄",
-      chef2_title: "Chibi Chef",
+      chef2_title: "Neko Chef",
       chef2_text:
         "Exactly. We could use pre-cut, pre-portioned fish to keep everything stocked… but premium texture and flavor often suffer. We choose quality over shortcuts.",
       footer: "If your first pick is gone, ask what’s amazing right now — we’ll point you to today’s best bite. ✨",
