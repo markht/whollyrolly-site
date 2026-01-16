@@ -396,12 +396,92 @@
     fillYear();
     markActiveNav();
   }
+   
 
   // Initialize the site after DOM content is loaded
   document.addEventListener("DOMContentLoaded", () => {
     injectSharedLayout();  /* Inject shared header and footer into placeholders */
     initNavToggle();       /* Initialize hamburger menu functionality */
     applyData();           /* Populate all dynamic content */
+  }
+                            
+(function () {
+  const DATA = window.WR_SITE_DATA || {};
+  const $$ = (sel, root = document) => Array.from(root.querySelectorAll(sel));
+  const $ = (sel, root = document) => root.querySelector(sel);
+  // ... (existing code above remains unchanged) ...
+
+  // Initialize the site after DOM content is loaded
+  document.addEventListener("DOMContentLoaded", () => {
+    injectSharedLayout();  /* Inject shared header and footer into placeholders */
+    initNavToggle();       /* Initialize hamburger menu functionality */
+    applyData();           /* Populate all dynamic content */
+
+    // Initialize review carousel (home page)
+    const carouselContainer = document.querySelector('.carousel-container');
+    const carouselTrack = document.querySelector('.carousel-track');
+    if (carouselContainer && carouselTrack) {
+      const originalImages = Array.from(carouselTrack.children);
+      const totalImages = originalImages.length;  // should be 10
+      // Determine how many images are visible based on screen width
+      let visibleCount = 3;
+      if (window.innerWidth <= 600) {
+        visibleCount = 1;
+      } else if (window.innerWidth <= 900) {
+        visibleCount = 2;
+      }
+      // Clone first and last images for seamless looping
+      for (let i = 0; i < visibleCount; i++) {
+        carouselTrack.appendChild(originalImages[i].cloneNode(true));
+      }
+      for (let i = 0; i < visibleCount; i++) {
+        const cloneIndex = totalImages - 1 - i;
+        carouselTrack.insertBefore(originalImages[cloneIndex].cloneNode(true), carouselTrack.firstChild);
+      }
+      // Carousel state
+      let currentSlide = 0;
+      const totalSlides = Math.ceil(totalImages / visibleCount);
+      const updateSlidePosition = (index, animate = true) => {
+        // Set or remove transition for smooth sliding
+        carouselTrack.style.transition = animate ? 'transform 0.5s ease' : 'none';
+        // Slide the track so that (index)th group is in view
+        const containerWidth = carouselContainer.clientWidth;
+        carouselTrack.style.transform = `translateX(-${(index + 1) * containerWidth}px)`;
+      };
+      // Set initial position (show first images, offset by one slide width for front clones)
+      updateSlidePosition(currentSlide, false);
+      // Auto-slide every 5 seconds
+      setInterval(() => {
+        currentSlide++;
+        updateSlidePosition(currentSlide);
+      }, 5000);
+      // Manual arrow controls
+      const prevButton = document.querySelector('.carousel-arrow.left');
+      const nextButton = document.querySelector('.carousel-arrow.right');
+      if (prevButton && nextButton) {
+        prevButton.addEventListener('click', () => {
+          currentSlide--;
+          updateSlidePosition(currentSlide);
+        });
+        nextButton.addEventListener('click', () => {
+          currentSlide++;
+          updateSlidePosition(currentSlide);
+        });
+      }
+      // Loop back to start/end when reaching the boundaries
+      carouselTrack.addEventListener('transitionend', () => {
+        if (currentSlide >= totalSlides) {
+          // Wrapped past the last slide – snap back to start
+          currentSlide = 0;
+          updateSlidePosition(currentSlide, false);
+        } else if (currentSlide < 0) {
+          // Wrapped before the first slide – snap to last
+          currentSlide = totalSlides - 1;
+          updateSlidePosition(currentSlide, false);
+        }
+      });
+    }
   });
 })();
+
 
