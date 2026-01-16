@@ -230,13 +230,5 @@ window.WR_SITE_DATA = {
       },
     ],
   },
-   reviews: [
-  { name: "Alex G.", text: "Some of the best nigiri I’ve had in Utah. Super fresh!" },
-  { name: "Jasmine L.", text: "Loved the chibi sushi 101 idea — actually learned a lot!" },
-  { name: "Tyson M.", text: "The rice was perfect and the staff was super helpful." },
-  { name: "Kimberly T.", text: "Every roll was on point — great balance of flavor." },
-  { name: "Eddie V.", text: "Real fish, clean cuts, and amazing energy inside." }
-],
-
 };
 
