@@ -568,3 +568,60 @@ img { max-width: 100%; display: block; }
   .chibi--assistant { grid-template-columns: 1fr 64px; }
   .chibi__avatar { width: 64px; height: 64px; border-radius: 18px; }
 }
+/* Review carousel styles */
+.review-carousel { /* inherits base .section padding */ }
+
+.carousel-container {
+  position: relative;
+  overflow: hidden;
+}
+
+.carousel-track {
+  display: flex;
+  transition: transform 0.5s ease;
+}
+
+.carousel-track img {
+  flex: 0 0 33.333%;
+  max-width: 33.333%;
+  height: auto;
+}
+
+.carousel-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(0, 0, 0, 0.5);
+  color: #fff;
+  border: none;
+  border-radius: 20px;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+.carousel-arrow.left {
+  left: 10px;
+}
+.carousel-arrow.right {
+  right: 10px;
+}
+.carousel-arrow:focus {
+  outline: none;
+}
+
+/* Responsive adjustments: 2 images on tablet, 1 image on mobile */
+@media (max-width: 900px) {
+  .carousel-track img {
+    flex: 0 0 50%;
+    max-width: 50%;
+  }
+}
+@media (max-width: 600px) {
+  .carousel-track img {
+    flex: 0 0 100%;
+    max-width: 100%;
+  }
+}
