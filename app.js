@@ -152,7 +152,7 @@
     setInterval(() => {
       currentSlide++;
       updateSlidePosition(currentSlide);
-    }, 5000);
+    }, 10000);
 
     const prevButton = document.querySelector('.carousel-arrow.left');
     const nextButton = document.querySelector('.carousel-arrow.right');
