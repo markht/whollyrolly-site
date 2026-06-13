@@ -31,6 +31,13 @@
       const brandName = DATA.brand?.name || "Wholly Rolly!";
       const orderUrl = DATA.links?.order_url || "#";
       const logoSrc = DATA.images?.logo || "assets/logo.png";
+       // Apply hero side image
+const heroSideEl = document.querySelector('[data-bg="home_side"]');
+if (heroSideEl && DATA.images?.home_side) {
+  heroSideEl.style.backgroundImage = `url('${DATA.images.home_side}')`;
+  heroSideEl.style.backgroundSize = 'cover';
+  heroSideEl.style.backgroundPosition = 'center';
+}
       headerMount.innerHTML = `
         <header class="nav">
           <div class="container nav-inner">
