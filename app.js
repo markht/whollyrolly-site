@@ -4,13 +4,6 @@
    - Apply WR_SITE_DATA content to data-t / data-a / data-bg placeholders
    - Build Menu + Info sections based on page
    - Mobile nav toggle (hamburger menu) for injected header
-   ========================================= */
-/* =========================================
-   Wholly Rolly Site Script (single system)
-   - Inject shared header/footer into #site-header / #site-footer
-   - Apply WR_SITE_DATA content to data-t / data-a / data-bg placeholders
-   - Build Menu + Info sections based on page
-   - Mobile nav toggle (hamburger menu) for injected header
    - Review image carousel (homepage only)
    ========================================= */
 (function () {
@@ -27,21 +20,12 @@
   function injectSharedLayout() {
     const headerMount = $("#site-header");
     const footerMount = $("#site-footer");
+
     if (headerMount) {
       const brandName = DATA.brand?.name || "Wholly Rolly!";
       const orderUrl = DATA.links?.order_url || "#";
       const logoSrc = DATA.images?.logo || "assets/logo.png";
-       // Apply all data-bg images
-document.querySelectorAll('[data-bg]').forEach(el => {
-  const key = el.getAttribute('data-bg');
-  const src = DATA.images?.[key];
-  if (src) {
-    el.style.backgroundImage = `url('${src}')`;
-    el.style.backgroundSize = 'cover';
-    el.style.backgroundPosition = 'center';
-  }
-});
-}
+
       headerMount.innerHTML = `
         <header class="nav">
           <div class="container nav-inner">
@@ -73,6 +57,7 @@ document.querySelectorAll('[data-bg]').forEach(el => {
         </header>
       `;
     }
+
     if (footerMount) {
       const brandName = DATA.brand?.name || "Wholly Rolly!";
       const domain = DATA.brand?.domain || "";
@@ -91,6 +76,19 @@ document.querySelectorAll('[data-bg]').forEach(el => {
         </footer>
       `;
     }
+  }
+
+  // Apply all data-bg images from DATA.images
+  function applyBackgroundImages() {
+    document.querySelectorAll('[data-bg]').forEach(el => {
+      const key = el.getAttribute('data-bg');
+      const src = DATA.images?.[key];
+      if (src) {
+        el.style.backgroundImage = `url('${src}')`;
+        el.style.backgroundSize = 'cover';
+        el.style.backgroundPosition = 'center';
+      }
+    });
   }
 
   function initNavToggle() {
@@ -191,6 +189,7 @@ document.querySelectorAll('[data-bg]').forEach(el => {
 
   document.addEventListener("DOMContentLoaded", () => {
     injectSharedLayout();
+    applyBackgroundImages();
     initNavToggle();
     fillYear();
     markActiveNav();
