@@ -81,45 +81,93 @@ window.WR_SITE_DATA = {
 
   menu: {
     intro:
-      "A clean, premium menu that’s easy to scan. Replace names, descriptions, and prices anytime in site-data.js.",
+      "Premium sushi, real ingredients, no shortcuts. Replace names, descriptions, and prices anytime in site-data.js.",
     sections: [
       {
-        title: "Signature Sushi",
+        id: "black-label",
+        title: "Black Label",
+        black_label: true,
+        subtitle: "Our most premium selections — reserved for exceptional ingredients.",
         items: [
-          { name: "Wholly Rolly Signature", desc: "House favorite build — rich, bright, balanced.", price: "$—" },
-          { name: "Inferno Sushi", desc: "Heat + sweetness + finish that lingers.", price: "$—" },
-          { name: "Seasonal Special", desc: "Rotating premium cut combo.", price: "$—" },
+          { name: "Otoro Nigiri", desc: "Bluefin belly, the fattiest and most prized cut. Melts on contact.", price: "$—" },
+          { name: "Ora King Salmon Nigiri", desc: "New Zealand Ora King — silky, rich, exceptional marbling.", price: "$—" },
+          { name: "Uni Gunkan", desc: "Fresh sea urchin, clean ocean sweetness, delicate finish.", price: "$—" },
+          { name: "A5 Wagyu Roll", desc: "Japanese A5 wagyu, truffle, gold leaf — a singular experience.", price: "$—" },
+          { name: "Black Label Sashimi Plate", desc: "Chef's selection of today's finest cuts. Limited daily.", price: "$—" },
+          { name: "King Crab Hand Roll", desc: "Alaskan king crab, house aioli, crisp nori, served immediately.", price: "$—" },
+          { name: "Chutoro Sashimi", desc: "Medium-fat bluefin belly — rich, balanced, extraordinary.", price: "$—" },
         ],
       },
       {
-        title: "Nigiri & Sashimi",
+        id: "sushi-rolls",
+        title: "Sushi Rolls",
         items: [
-          { name: "Salmon", desc: "Clean, buttery, fresh finish.", price: "$—" },
-          { name: "Tuna", desc: "Bright, lean, classic.", price: "$—" },
-          { name: "Premium Cut", desc: "Limited daily — ask what’s best today.", price: "$—" },
-        ],
-      },
-      {
-        title: "Classic Rolls",
-        items: [
+          { name: "Wholly Rolly Signature", desc: "Our house roll — rich, bright, and balanced. Ask your server.", price: "$—" },
+          { name: "Spicy Tuna", desc: "Spicy tuna blend, cucumber, crunch, bright finish.", price: "$—" },
           { name: "California", desc: "Crab, avocado, cucumber, sesame.", price: "$—" },
-          { name: "Spicy Tuna", desc: "Spicy tuna blend, crunch, bright finish.", price: "$—" },
-          { name: "Veggie", desc: "Fresh, crisp, clean.", price: "$—" },
+          { name: "Salmon Avocado", desc: "Atlantic salmon, ripe avocado, clean finish.", price: "$—" },
+          { name: "Rainbow Roll", desc: "California base topped with assorted sashimi.", price: "$—" },
+          { name: "Dragon Roll", desc: "Shrimp tempura inside, avocado on top, eel sauce.", price: "$—" },
+          { name: "Hamachi Jalapeño", desc: "Yellowtail, jalapeño, yuzu ponzu — clean heat.", price: "$—" },
+          { name: "Veggie Roll", desc: "Fresh cucumber, avocado, pickled radish, sesame.", price: "$—" },
         ],
       },
       {
+        id: "nigiri",
+        title: "Nigiri",
+        subtitle: "Two pieces per order. Ask about today's premium cuts.",
+        items: [
+          { name: "Salmon", desc: "Atlantic salmon — buttery, mild, crowd favorite.", price: "$—" },
+          { name: "Tuna", desc: "Yellowfin — clean, lean, bright red.", price: "$—" },
+          { name: "Yellowtail", desc: "Hamachi — smooth, slightly sweet, rich but gentle.", price: "$—" },
+          { name: "Shrimp", desc: "Ebi — naturally sweet, firm, classic.", price: "$—" },
+          { name: "Scallop", desc: "Delicate, sweet, lightly torched.", price: "$—" },
+          { name: "Eel", desc: "Unagi — grilled, glazed, warm and rich.", price: "$—" },
+          { name: "Egg", desc: "Tamago — lightly sweet Japanese egg omelette.", price: "$—" },
+          { name: "Daily Premium Cut", desc: "Ask your server — limited by what's best today.", price: "$—" },
+        ],
+      },
+      {
+        id: "sashimi",
+        title: "Sashimi",
+        subtitle: "Three slices per order. Pure fish, no rice.",
+        items: [
+          { name: "Salmon Sashimi", desc: "Atlantic salmon — clean, rich, buttery.", price: "$—" },
+          { name: "Tuna Sashimi", desc: "Yellowfin — lean, firm, classic.", price: "$—" },
+          { name: "Yellowtail Sashimi", desc: "Hamachi — mild, smooth, slightly sweet.", price: "$—" },
+          { name: "Salmon + Tuna Combo", desc: "Three of each — a clean, crowd-pleasing pairing.", price: "$—" },
+          { name: "Chef's Sashimi Plate", desc: "Today's best cuts, chef's selection. Ask what's in.", price: "$—" },
+          { name: "Sablefish Sashimi", desc: "Black cod — extraordinarily buttery, silky, melt-in-mouth.", price: "$—" },
+        ],
+      },
+      {
+        id: "desserts",
+        title: "Desserts",
+        items: [
+          { name: "Mochi Ice Cream", desc: "Assorted flavors — mango, strawberry, green tea.", price: "$—" },
+          { name: "Matcha Cheesecake", desc: "House-made, earthy matcha, silky finish.", price: "$—" },
+          { name: "Black Sesame Panna Cotta", desc: "Smooth, nutty, lightly sweet.", price: "$—" },
+          { name: "Dorayaki", desc: "Japanese pancake sandwich, sweet red bean filling.", price: "$—" },
+        ],
+      },
+      {
+        id: "drinks",
         title: "Drinks",
         items: [
-          { name: "Ramune", desc: "Japanese soda (assorted flavors).", price: "$—" },
-          { name: "Calpico", desc: "Refreshing and crisp.", price: "$—" },
-          { name: "Water", desc: "Because balance.", price: "$—" },
+          { name: "Ramune", desc: "Japanese soda, assorted flavors.", price: "$—" },
+          { name: "Calpico", desc: "Refreshing Japanese soft drink, lightly sweet.", price: "$—" },
+          { name: "Matcha Latte", desc: "Hot or iced — house-prepared ceremonial matcha.", price: "$—" },
+          { name: "Sparkling Water", desc: "Because balance.", price: "$—" },
+          { name: "Japanese Green Tea", desc: "Hot brewed sencha.", price: "$—" },
+          { name: "Yuzu Lemonade", desc: "Fresh yuzu citrus, light and bright.", price: "$—" },
         ],
       },
     ],
-    sellout_note_title: "Heads up!",
+    sellout_note_title: "Why some cuts sell out",
     sellout_note_text:
-      "Some sushi sells out when premium cuts run out. If your first pick is gone, ask what’s amazing today — we’ll guide you.",
+      "At Wholly Rolly! we source whole fish whenever possible — but what that means depends on the fish. A bluefin tuna can weigh over 500 pounds. We don't bring in a whole one. Instead we work with our wholesaler to source specific sections of a whole fish — a belly block for otoro and chutoro, a loin for akami — cut to order from a single animal and delivered fresh. For most other fish we bring in the whole animal and break it down ourselves in house. For certain premium cuts like otoro, we may also source a large frozen section when a suitable fish is available and the quality meets our standard. The result is that some cuts are genuinely limited. A belly block only yields so much otoro. When it's gone, it's gone until the next suitable fish comes in. If something you want is sold out, ask your server what's exceptional right now — there's always something worth ordering.",
   },
+
 
   order: {
     title: "Order Online",
@@ -231,4 +279,5 @@ window.WR_SITE_DATA = {
     ],
   },
 };
+
 
