@@ -1,4 +1,4 @@
-* =========================================
+/* =========================================
    Wholly Rolly Site Script (single system)
    - Inject shared header/footer into #site-header / #site-footer
    - Apply WR_SITE_DATA content to data-t / data-a / data-bg placeholders
@@ -278,4 +278,3 @@
     initReviewCarousel();
   });
 })();
-
