@@ -41,8 +41,6 @@
               <a href="menu.html">Menu</a>
               <a href="order.html">Order</a>
               <a href="sushi-101.html">Sushi 101</a>
-              <a href="sushi-cuts-quality.html">Cuts &amp; Quality</a>
-              <a href="sushi-aging-rice-nori.html">Aging, Rice &amp; Nori</a>
               <a href="about-location.html">About &amp; Location</a>
             </nav>
             <a class="cta" href="${escapeHtml(orderUrl)}" target="_blank" rel="noopener">
@@ -278,3 +276,4 @@
     initReviewCarousel();
   });
 })();
+
