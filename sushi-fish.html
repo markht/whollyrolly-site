@@ -3,22 +3,21 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Fish 101 — Wholly Rolly!</title>
+  <title>Fish Flavor Guide — Wholly Rolly!</title>
+  <meta name="description" content="Fish Flavor Guide from Wholly Rolly Sushi 101: simple guest education about better sushi ingredients and technique." />
   <link rel="stylesheet" href="styles.css" />
-  <style>
-    .s101-back { display:inline-flex; align-items:center; gap:8px; font-size:13px; font-weight:600; color:#f0b429; text-decoration:none; margin-bottom:24px; }
-    .s101-back:hover { opacity:0.75; }
-    .s101-img-wrap { width:100%; }
-    .s101-img-wrap img { width:100%; height:auto; display:block; border-radius:16px; }
-  </style>
 </head>
 <body data-page="sushi101">
   <div id="site-header"></div>
   <main class="container">
     <a class="s101-back" href="sushi-101.html">← Back to Sushi 101</a>
-    <div class="s101-img-wrap">
-      <img src="assets/sushi101-fish.png" alt="Fish 101 — Not all fish are created equal" />
-    </div>
+    <section class="pagehead">
+      <h1 data-t="fish_title"></h1>
+      <p data-t="fish_subtitle"></p>
+    </section>
+    <section class="section">
+      <div class="grid3" id="fish-sections"></div>
+    </section>
   </main>
   <div id="site-footer"></div>
   <script src="site-data.js"></script>
