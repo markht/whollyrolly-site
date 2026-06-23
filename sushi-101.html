@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -6,26 +7,81 @@
   <title>Sushi 101 — Wholly Rolly!</title>
   <link rel="stylesheet" href="styles.css" />
 </head>
-<body data-page="sushi101"> <!-- "sushi101" page identifier -->
-  <!-- Shared header mount -->
+<body data-page="sushi101">
   <div id="site-header"></div>
 
   <main class="container">
+
+    <!-- PAGE HEADER -->
     <section class="pagehead">
-      <h1 data-t="s101_title"></h1>
-      <p data-t="s101_subtitle"></p>
+      <h1>Sushi 101</h1>
+      <p>Everything you wanted to know about sushi — the fish, the rice, the craft. Learn what separates good sushi from exceptional sushi.</p>
     </section>
 
+    <!-- INTRO BANNER IMAGE -->
     <section class="section">
-      <!-- Sushi 101 hero/banner image -->
-      <div class="photo has-img" data-bg="sushi101_banner" data-placeholder="Drop a Sushi 101 banner photo in assets/sushi101.jpg" style="min-height:260px;"></div>
+      <div class="photo has-img" data-bg="sushi101_banner" data-placeholder="Drop a Sushi 101 banner photo in assets/sushi101.jpg" style="min-height:300px; border-radius:16px;"></div>
     </section>
 
+    <!-- INTRO TEXT -->
     <section class="section">
-      <h2>Start here</h2>
-      <div class="grid3" id="s101-cards"></div> <!-- Educational topic cards injected here -->
+      <div class="card">
+        <h2>Why does any of this matter?</h2>
+        <p style="color:var(--muted); line-height:1.75; margin-top:12px;">Most people eat sushi without ever thinking about what makes one piece extraordinary and another forgettable. The difference is rarely luck — it comes down to a handful of ingredients and decisions that most restaurants don't bother explaining.</p>
+        <p style="color:var(--muted); line-height:1.75; margin-top:10px;">We built Sushi 101 because we believe an informed guest is a better guest. When you understand what goes into great sushi, you taste it differently. You notice what's there — and what isn't.</p>
+        <p style="color:var(--muted); line-height:1.75; margin-top:10px;">Pick a topic below and start wherever you're curious.</p>
+      </div>
     </section>
 
+    <!-- TOPIC CARDS -->
+    <section class="section">
+      <h2 style="margin-bottom:20px;">Choose a topic</h2>
+      <div class="s101-topics-grid">
+
+        <a class="s101-topic-card s101-topic-card--featured" href="sushi-fish.html">
+          <div class="s101-topic-img" data-placeholder="Fish 101 photo">🐟</div>
+          <div class="s101-topic-body">
+            <span class="s101-topic-label">Fish</span>
+            <h3 class="s101-topic-title">Not all fish are created equal</h3>
+            <p class="s101-topic-desc">Grades, cuts, species, and why the difference between akami and otoro is like the difference between sirloin and A5 wagyu.</p>
+            <span class="s101-topic-cta">Read more →</span>
+          </div>
+        </a>
+
+        <a class="s101-topic-card" href="sushi-rice.html">
+          <div class="s101-topic-img" data-placeholder="Rice 101 photo">🍚</div>
+          <div class="s101-topic-body">
+            <span class="s101-topic-label">Rice</span>
+            <h3 class="s101-topic-title">The foundation of great sushi</h3>
+            <p class="s101-topic-desc">The word "sushi" literally refers to the rice — not the fish. Learn why the grain, the water, and the preparation matter more than most people realize.</p>
+            <span class="s101-topic-cta">Read more →</span>
+          </div>
+        </a>
+
+        <a class="s101-topic-card" href="sushi-nori.html">
+          <div class="s101-topic-img" data-placeholder="Nori 101 photo">🌊</div>
+          <div class="s101-topic-body">
+            <span class="s101-topic-label">Nori</span>
+            <h3 class="s101-topic-title">The unsung hero of sushi</h3>
+            <p class="s101-topic-desc">Premium nori cracks cleanly, smells of ocean and toast, and quietly makes everything around it better. Most people never notice it — until it's missing.</p>
+            <span class="s101-topic-cta">Read more →</span>
+          </div>
+        </a>
+
+        <a class="s101-topic-card" href="sushi-sides.html">
+          <div class="s101-topic-img" data-placeholder="Sides 101 photo">🟢</div>
+          <div class="s101-topic-body">
+            <span class="s101-topic-label">Sides</span>
+            <h3 class="s101-topic-title">Wasabi, ginger &amp; soy sauce</h3>
+            <p class="s101-topic-desc">Over 95% of the green paste at sushi restaurants isn't real wasabi. The pink ginger is artificially dyed. And most soy sauce was brewed in a steel tank in under six months.</p>
+            <span class="s101-topic-cta">Read more →</span>
+          </div>
+        </a>
+
+      </div>
+    </section>
+
+    <!-- CHIBI DIALOGUE SECTION (existing) -->
     <section class="limited-cuts card" id="limited-cuts">
       <div class="limited-cuts__header">
         <h2 data-t="lc_hook"></h2>
@@ -66,9 +122,9 @@
       </div>
     </section>
 
-    <!-- Shared footer mount -->
-    <div id="site-footer"></div>
   </main>
+
+  <div id="site-footer"></div>
 
   <script src="site-data.js"></script>
   <script src="app.js"></script>
