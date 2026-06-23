@@ -31,7 +31,6 @@
           <div class="container nav-inner">
             <a class="brand" href="index.html" aria-label="Home">
               <img class="brand-logo" src="${escapeHtml(logoSrc)}" alt="${escapeHtml(brandName)} logo" />
-              <span data-t="brand_name">${escapeHtml(brandName)}</span>
             </a>
             <button class="hamburger" type="button" aria-controls="primary-nav" aria-expanded="false" aria-label="Toggle navigation">
               <span class="hamburger-lines" aria-hidden="true"></span>
