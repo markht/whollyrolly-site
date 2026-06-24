@@ -1,3 +1,6 @@
+
+
+
 /* ===========================
    WR SITE DATA (single source of truth)
    Edit this file to update text, menu, links, hours, images.
@@ -16,47 +19,47 @@ window.WR_SITE_DATA = {
     order_url: "https://cake.net/11566006",
     maps_query: "1525 N Main St #110B Bountiful UT 84010",
     phone: "801-891-9637",
-    email: "PASTE_EMAIL_HERE",
-    instagram: "@PASTE_HANDLE_HERE",
+    email: "",
+    instagram: "",
   },
 
   location: {
     address_line1: "1525 N Main St #110B",
     address_line2: "Bountiful, UT 84010",
-    hours_lines: ["Mon–Thu: —", "Fri–Sat: —", "Sun: —"],
-    parking_note: "Optional: Parking tips go here.",
+    hours_lines: ["Hours coming soon", "Order online for current availability"],
+    parking_note: "Located at 1525 N Main St #110B in Bountiful. Add detailed parking notes here when finalized.",
   },
 
   images: {
     logo: "assets/logo.png",
     home_side: "assets/hero_side.jpg",
     menu_banner: "assets/menu.jpg",
-    sushi101_banner: "assets/sushi101.jpg",
-    about_banner: "assets/about.jpg",
-    chibi_chef: "assets/chibi_chef.png",
-    chibi_sidekick: "assets/chibi_sidekick.png",
+    sushi101_banner: "assets/assets_hero.jpg",
+    about_banner: "assets/hero_side.jpg",
+    chibi_chef: "assets/logo.png",
+    chibi_sidekick: "assets/logo.png",
   },
 
   home: {
-    headline: "Wholly Nutritious! Wholly Delicoius!.",
+    headline: "Premium Sushi for People Who Taste the Difference.",
     subhead:
-      "Premium ingredients, careful technique, and a modern vibe — built for cravings and crafted with care.",
+      "Whole-fish thinking, Koshihikari rice, fresh wasabi, traditional soy sauce, and Sushi 101 education — served in a modern, approachable sushi bar." ,
     cta_primary: "Order Online",
     cta_secondary: "View Menu",
     cta_third: "Get Directions",
     stat1_title: "Pick-Up + Delivery",
     stat1_text: "Order through Cake — fast, simple, and fresh.",
-    stat2_title: "Premium Cuts",
-    stat2_text: "Nigiri & sashimi that taste as good as they look.",
-    badges: ["🔥 Signature Sushi", "🍣 Nigiri & Sashimi", "✨ Sushi 101"],
+    stat2_title: "Whole-Fish Thinking",
+    stat2_text: "Limited cuts, better texture, and sushi that changes with what is best." ,
+    badges: ["🍣 Premium Nigiri", "🌊 Whole-Fish Thinking", "✨ Sushi 101"],
     features: [
       {
-        title: "Quality-forward",
-        text: "We obsess over fish, rice, nori, and knife work — so every bite is clean, balanced, and bright.",
+        title: "Ingredient-obsessed",
+        text: "Fish, rice, nori, soy sauce, wasabi, and knife work all matter. We build the bite from the foundation up.",
       },
       {
-        title: "Modern + fun",
-        text: "Eye-catching, craveable, and built to share. Sushi should feel exciting.",
+        title: "Premium, not pretentious",
+        text: "A foodie-level sushi experience without the coat-and-tie atmosphere or generic all-you-can-eat feel.",
       },
       {
         title: "Sushi 101 included",
@@ -65,23 +68,23 @@ window.WR_SITE_DATA = {
     ],
     featured: [
       {
-        title: "Signature Nigiri Set",
-        text: "A premium lineup with clean flavor and perfect Koshihikari rice texture.",
+        title: "First time here?",
+        text: "Start with a signature roll, a nigiri pairing, and the fresh wasabi + traditional soy sauce upgrade.",
       },
       {
-        title: "Chef’s Special Sushi",
-        text: "Rotating cuts and combos — when it’s gone, it’s gone.",
+        title: "Ask what is best today",
+        text: "Some premium cuts are limited by the fish we receive. If something sells out, that is usually a quality signal.",
       },
       {
-        title: "Classic Roll (done right)",
-        text: "Familiar, but elevated — crisp premium imported nori, balanced seasoning, bright finish.",
+        title: "Classics, done carefully",
+        text: "California, spicy tuna, salmon avocado, and other familiar rolls still get better rice, better balance, and better execution.",
       },
     ],
   },
 
   menu: {
     intro:
-      "Premium sushi, real ingredients, no shortcuts. Replace names, descriptions, and prices anytime in site-data.js.",
+      "Premium sushi, real ingredients, and no shortcuts where it counts. Prices and availability may change as we finalize the live menu and source the best fish available." ,
     sections: [
       {
         id: "black-label",
@@ -260,21 +263,74 @@ window.WR_SITE_DATA = {
     ],
   },
 
+  reviews: {
+    highlights: [
+      { name: "Michelle Kelley", quote: "I have eaten sushi all over the world and the rolls I had here were among the best I have ever had." },
+      { name: "Julien Lopez", quote: "The quality of this sushi compares to the highest scale sushi restaurants." },
+      { name: "Beau Graham", quote: "Please try every nigiri and give yourself a little sampler. It is seriously good." },
+    ],
+  },
+
+  fish: {
+    title: "Fish Flavor Guide",
+    subtitle: "A simple guide to the flavor, texture, richness, and best use of popular sushi fish.",
+    sections: [
+      { h: "Bluefin tuna", p: "Lean akami is clean and iron-rich; chutoro is balanced and buttery; otoro is intensely rich and best served simply." },
+      { h: "Salmon", p: "Buttery, mild, crowd-pleasing, and excellent with citrus, herbs, light heat, or a gentle torch." },
+      { h: "Hamachi", p: "Smooth, lightly sweet, and elegant with jalapeno, yuzu, ponzu, or clean nigiri presentation." },
+      { h: "Escolar", p: "Very rich and buttery, but its waxy fats can be hard to digest. Keep portions small and use it intentionally." },
+      { h: "Sablefish / black cod", p: "Silky, high-fat, delicate, and luxurious. Best when treated like a premium rich fish rather than a filler." },
+      { h: "Scallop", p: "Sweet, delicate, and creamy. Works beautifully with citrus, yuzu kosho, light torching, or clean nigiri." },
+    ],
+  },
+
+  nori: {
+    title: "Nori 101",
+    subtitle: "The wrapper is not just a wrapper. Great nori changes aroma, texture, and the whole bite.",
+    sections: [
+      { h: "Snap", p: "Good nori should crack cleanly when fresh. Limp, papery nori makes even good fillings feel flat." },
+      { h: "Aroma", p: "Premium nori smells toasted, oceanic, and savory. That aroma hits before the fish does." },
+      { h: "Timing", p: "Hand rolls are best eaten immediately because nori quality disappears quickly once it touches warm rice." },
+    ],
+  },
+
+  rice: {
+    title: "Rice 101",
+    subtitle: "Sushi is built on rice. The fish is important, but the rice carries the whole bite.",
+    sections: [
+      { h: "Koshihikari", p: "Prized for sweetness, gloss, fragrance, and cohesive texture. It gives sushi rice its premium feel." },
+      { h: "Water matters", p: "Water softness changes texture. We use selected bottled water to keep the rice clean, consistent, and tender." },
+      { h: "Seasoning", p: "Vinegar, salt, sugar, temperature, and resting time determine whether rice tastes bright and balanced or flat." },
+      { h: "Pressure and cooking", p: "A good cooker controls heat, steam, and pressure so the center and surface of each grain cook evenly." },
+    ],
+  },
+
+  sides: {
+    title: "Wasabi, Ginger & Soy Sauce",
+    subtitle: "The supporting cast can elevate sushi — or overpower it.",
+    sections: [
+      { h: "Fresh wasabi", p: "Real grated wasabi is aromatic, gentle, and short-lived. It is different from the common horseradish-based green paste." },
+      { h: "Soy sauce", p: "Less is often more. Traditionally, wasabi is placed on the rice or fish rather than stirred into soy sauce." },
+      { h: "Ginger", p: "Ginger is a palate cleanser between bites, not a topping for every piece." },
+      { h: "Premium pairing", p: "Fresh wasabi and traditional soy sauce make the most sense as a guided upgrade for guests ordering nigiri or premium cuts." },
+    ],
+  },
+
   about_location: {
     title: "About & Location",
-    subtitle: "A modern sushi spot built around craft, quality, and good vibes.",
+    subtitle: "A modern sushi spot for foodies who want premium ingredients without a premium-stuffy atmosphere.",
     about_blocks: [
       {
         h: "Our philosophy",
-        p: "We build sushi for people who care about flavor — clean, balanced, and craveable. No shortcuts where it counts.",
+        p: "Wholly Rolly! is built for people who notice the details: better rice, better nori, better fish handling, cleaner sauces, and a more intentional bite." ,
       },
       {
         h: "What makes us different",
-        p: "Premium rice (Koshihikari), nori that snaps, and technique you can taste. Sushi should feel special — every time.",
+        p: "We focus on whole-fish thinking, Koshihikari rice, selected water, fresh wasabi, traditional soy sauce, and education that helps guests understand what they are tasting." ,
       },
       {
         h: "Sushi 101 energy",
-        p: "We love teaching what we love. If you’re curious, ask questions — we’re happy to nerd out.",
+        p: "Sushi 101 is part of the brand: simple, visual education about rice, nori, fish cuts, wasabi, soy sauce, and why premium sushi tastes different." ,
       },
     ],
   },
