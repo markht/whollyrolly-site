@@ -264,9 +264,91 @@
     });
   }
 
+
+  function getPathValue(path) {
+    const aliases = {
+      brand_name: "brand.name", brand_domain: "brand.domain", brand_kicker_left: "brand.kicker_left", brand_kicker_right: "brand.kicker_right",
+      home_headline: "home.headline", home_subhead: "home.subhead", home_cta_primary: "home.cta_primary", home_cta_secondary: "home.cta_secondary", home_cta_third: "home.cta_third",
+      home_stat1_title: "home.stat1_title", home_stat1_text: "home.stat1_text", home_stat2_title: "home.stat2_title", home_stat2_text: "home.stat2_text",
+      menu_intro: "menu.intro", menu_sellout_title: "menu.sellout_note_title", menu_sellout_text: "menu.sellout_note_text",
+      order_title: "order.title", order_subtitle: "order.subtitle", order_card_title: "order.card_title", order_card_text: "order.card_text",
+      al_title: "about_location.title", al_subtitle: "about_location.subtitle", loc_line1: "location.address_line1", loc_line2: "location.address_line2",
+      parking_note: "location.parking_note", phone_text: "links.phone", email_text: "links.email", instagram_text: "links.instagram",
+      cuts_title: "cuts_quality.title", cuts_subtitle: "cuts_quality.subtitle", aging_title: "aging_rice_nori.title", aging_subtitle: "aging_rice_nori.subtitle",
+      fish_title: "fish.title", fish_subtitle: "fish.subtitle", nori_title: "nori.title", nori_subtitle: "nori.subtitle", rice_title: "rice.title", rice_subtitle: "rice.subtitle", sides_title: "sides.title", sides_subtitle: "sides.subtitle",
+      lc_hook: "sushi101.limited.hook", lc_b1_title: "sushi101.limited.chef_title", lc_b1_text: "sushi101.limited.chef_text", lc_b2_title: "sushi101.limited.sidekick_title", lc_b2_text: "sushi101.limited.sidekick_text", lc_b3_title: "sushi101.limited.chef2_title", lc_b3_text: "sushi101.limited.chef2_text", lc_footer: "sushi101.limited.footer"
+    };
+    const full = aliases[path] || path;
+    return full.split('.').reduce((obj, key) => (obj && obj[key] !== undefined) ? obj[key] : undefined, DATA);
+  }
+
+  function applyTextAndAttributes() {
+    $$('[data-t]').forEach((el) => {
+      const val = getPathValue(el.getAttribute('data-t'));
+      if (val !== undefined && val !== null) el.textContent = String(val);
+    });
+    $$('[data-a]').forEach((el) => {
+      const key = el.getAttribute('data-a');
+      const attr = el.getAttribute('data-attr') || 'href';
+      let val = getPathValue(key);
+      if (key === 'order_url') val = DATA.links?.order_url;
+      if (key === 'maps_url') val = 'https://www.google.com/maps/search/?api=1&query=' + encodeURIComponent(DATA.links?.maps_query || '');
+      if (key === 'phone_href') val = DATA.links?.phone ? `tel:${DATA.links.phone.replace(/[^0-9+]/g, '')}` : '#';
+      if (key === 'email_href') val = DATA.links?.email && DATA.links.email.includes('@') ? `mailto:${DATA.links.email}` : '#';
+      if (val) el.setAttribute(attr, String(val));
+    });
+  }
+
+  function cardHtml(item) {
+    return `<div class="mini"><h3>${escapeHtml(item.title || item.h || '')}</h3><p>${escapeHtml(item.text || item.p || '')}</p></div>`;
+  }
+
+  function buildHomeDynamicContent() {
+    const features = $('#home-features');
+    if (features && DATA.home?.features) features.innerHTML = DATA.home.features.map(cardHtml).join('');
+    const featured = $('#home-featured');
+    if (featured && DATA.home?.featured) featured.innerHTML = DATA.home.featured.map(cardHtml).join('');
+    const badges = $('#home-badges');
+    if (badges && DATA.home?.badges) badges.innerHTML = DATA.home.badges.map(b => `<span class="badge">${escapeHtml(b)}</span>`).join('');
+    const reviews = $('#review-highlights');
+    if (reviews && DATA.reviews?.highlights) reviews.innerHTML = DATA.reviews.highlights.map(r => `<blockquote class="review-card"><p>“${escapeHtml(r.quote)}”</p><cite>${escapeHtml(r.name)}</cite></blockquote>`).join('');
+  }
+
+  function buildSimpleSections(id, sections) {
+    const mount = $('#' + id);
+    if (!mount || !sections) return;
+    mount.innerHTML = sections.map(cardHtml).join('');
+  }
+
+  function buildOrderSteps() {
+    const mount = $('#order-steps');
+    if (mount && DATA.order?.steps) mount.innerHTML = DATA.order.steps.map(cardHtml).join('');
+  }
+
+  function buildAboutBlocks() {
+    buildSimpleSections('about-blocks', DATA.about_location?.about_blocks);
+    const hours = $('#hours-lines');
+    if (hours && DATA.location?.hours_lines) hours.innerHTML = DATA.location.hours_lines.map(h => `<div>${escapeHtml(h)}</div>`).join('');
+  }
+
+  function buildEducationPages() {
+    buildSimpleSections('cuts-sections', DATA.cuts_quality?.sections);
+    buildSimpleSections('aging-sections', DATA.aging_rice_nori?.sections);
+    buildSimpleSections('fish-sections', DATA.fish?.sections);
+    buildSimpleSections('nori-sections', DATA.nori?.sections);
+    buildSimpleSections('rice-sections', DATA.rice?.sections);
+    buildSimpleSections('sides-sections', DATA.sides?.sections);
+  }
+
+
   document.addEventListener("DOMContentLoaded", () => {
     injectSharedLayout();
+    applyTextAndAttributes();
     applyBackgroundImages();
+    buildHomeDynamicContent();
+    buildOrderSteps();
+    buildAboutBlocks();
+    buildEducationPages();
     buildMenu();
     initStickyJumpBar();
     initNavToggle();
