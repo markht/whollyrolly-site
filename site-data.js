@@ -18,7 +18,7 @@ window.WR_SITE_DATA = {
   links: {
     order_url: "https://cake.net/11566006",
     maps_query: "1525 N Main St #110B Bountiful UT 84010",
-    phone: "801-891-9637",
+    phone: "385-601-9870",
     email: "",
     instagram: "",
   },
