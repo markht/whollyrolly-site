@@ -1,21 +1,34 @@
-
-<!DOCTYPE html> <!-- Ensure HTML5 doctype for standards-compliant rendering -->
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" /> <!-- Character encoding -->
-  <meta name="viewport" content="width=device-width, initial-scale=1" /> <!-- Responsive viewport -->
-  <title>Wholly Rolly! — Premium Sushi in Bountiful, Utah</title>
-  <meta name="description" content="Premium sushi in Bountiful, Utah featuring whole-fish thinking, Koshihikari rice cooked in bottled water, fresh wasabi, traditional soy sauce, and Sushi 101 education." />
-  <meta property="og:title" content="Wholly Rolly! — Premium Sushi in Bountiful, Utah" />
-  <meta property="og:description" content="Premium sushi for people who taste the difference." />
-  <meta property="og:image" content="assets/hero_side.jpg" />
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Wholly Rolly! | Premium Sushi in Bountiful, Utah</title>
+  <meta name="description" content="Wholly Rolly! serves carefully crafted sushi in Bountiful, Utah, with premium fish, Koshihikari rice, quality nori, and an approachable Sushi 101 experience." />
   <link rel="stylesheet" href="styles.css" />
 </head>
-<body data-page="home"> <!-- "home" identifies this page for dynamic content -->
-  <!-- Shared header mount (injected via app.js) -->
-  <div id="site-header"></div>
+<body data-page="home">
+  <header class="nav">
+    <div class="container nav-inner">
+      <a class="brand" href="index.html" aria-label="Home">
+        <img class="brand-logo" src="assets/logo.png" alt="Wholly Rolly! logo" />
+        <span data-t="brand_name">Wholly Rolly!</span>
+      </a>
+      <nav class="nav-links" aria-label="Primary">
+        <a href="index.html">Home</a>
+        <a href="menu.html">Menu</a>
+        <a href="sushi-101.html">Sushi 101</a>
+        <a href="sushi-cuts-quality.html">Cuts & Quality</a>
+        <a href="sushi-aging-rice-nori.html">Aging, Rice & Nori</a>
+        <a href="about-location.html">About & Location</a>
+      </nav>
+      <a class="cta" href="menu.html"><span class="dot" aria-hidden="true"></span>View Menu</a>
+      <a class="cta mobile-cta" href="menu.html"><span class="dot" aria-hidden="true"></span>Menu</a>
+    </div>
+  </header>
 
   <main class="container">
+
     <section class="hero">
       <div class="hero-grid">
         <div class="card hero-main">
@@ -23,24 +36,17 @@
             <span class="pill" data-t="brand_kicker_left">Fresh • Crafted • Fun</span>
             <span style="color:rgba(183,192,216,.95); font-weight:900;" data-t="brand_kicker_right">Sushi Bar</span>
           </div>
-
-          <h1 class="h1" data-t="home_headline">Whole Fish. Pure Craft.</h1>
+          <h1 class="h1" data-t="home_headline">The difference is in the details.</h1>
           <p class="lead" data-t="home_subhead"></p>
 
-          <! <div class="actions"> -->
-            <! <a class="btn btn-primary" data-a="order_url" data-attr="href" target="_blank" rel="noopener"> -->
-              <! <span data-t="home_cta_primary">Order Online</span> -->
-            </a>
-            <a class="btn" href="menu.html">
-              <span data-t="home_cta_secondary">View Menu</span>
-            </a>
-            <a class="btn" href="about-location.html">
-              <span data-t="home_cta_third">Get Directions</span>
-            </a>
+          <div class="actions">
+            <a class="btn btn-primary" href="menu.html"><span data-t="home_cta_secondary">View Menu</span></a>
+            <a class="btn" href="sushi-101.html">Explore Sushi 101</a>
+            <a class="btn" href="about-location.html"><span data-t="home_cta_third">Get Directions</span></a>
           </div>
 
           <div class="divider"></div>
-          <div class="grid3" id="home-features"></div> <!-- Features will be injected here -->
+          <div class="grid3" id="home-features"></div>
         </div>
 
         <aside class="card hero-side">
@@ -55,70 +61,40 @@
               <div class="small" data-t="home_stat2_text"></div>
             </div>
           </div>
-          <div class="badge-row" id="home-badges"></div> <!-- Badges will be injected here -->
+          <div class="badge-row" id="home-badges"></div>
         </aside>
       </div>
     </section>
 
-    <section class="section section-emphasis">
-      <p class="eyebrow">Why Wholly Rolly?</p>
-      <h2>Premium sushi without the premium-stuffy atmosphere.</h2>
-      <p>We are not cheap sushi and we are not coat-and-tie fine dining. Wholly Rolly! is for foodies who want better fish, better rice, fresh wasabi, and a restaurant that actually explains why the details matter.</p>
+    <section class="section">
+      <h2>What we care about</h2>
+      <p>The quiet details behind a cleaner, more balanced bite.</p>
       <div class="grid3" id="home-featured"></div>
     </section>
 
-    <section class="section split-callout">
-      <div>
-        <p class="eyebrow">Sushi 101</p>
-        <h2>Learn why great sushi tastes different.</h2>
-        <p>Rice, nori, fish cuts, wasabi, soy sauce, aging, and knife work all change the final bite. Sushi 101 turns those details into simple, entertaining guides for guests.</p>
-        <div class="actions" style="margin-top:12px;">
-          <a class="btn btn-primary" href="sushi-101.html">Go to Sushi 101</a>
-          <a class="btn" href="sushi-fish.html">Fish Flavor Guide</a>
-        </div>
-      </div>
-      <div class="card quality-list">
-        <h3>Ingredient standards</h3>
-        <ul>
-          <li>Koshihikari rice, cooked in selected bottled water</li>
-          <li>Fresh grated wasabi upgrade</li>
-          <li>Traditional soy sauce pairing</li>
-          <li>Whole-fish thinking and limited premium cuts</li>
-        </ul>
-      </div>
-    </section>
-
     <section class="section">
-      <p class="eyebrow">Guest love</p>
-      <h2>People already describe Wholly Rolly! like a destination.</h2>
-      <div class="review-highlights" id="review-highlights"></div>
-    </section>
-
-    <section class="section review-carousel">
-      <h2>More guest reviews</h2>
-      <div class="carousel-container">
-        <div class="carousel-track">
-          <img src="assets-reviews/1.png" alt="Review 1" />
-          <img src="assets-reviews/2.png" alt="Review 2" />
-          <img src="assets-reviews/3.png" alt="Review 3" />
-          <img src="assets-reviews/4.png" alt="Review 4" />
-          <img src="assets-reviews/5.png" alt="Review 5" />
-          <img src="assets-reviews/6.png" alt="Review 6" />
-          <img src="assets-reviews/7.png" alt="Review 7" />
-          <img src="assets-reviews/8.png" alt="Review 8" />
-          <img src="assets-reviews/9.png" alt="Review 9" />
-        </div>
-        <button class="carousel-arrow left" aria-label="Previous reviews">&#10094;</button>
-        <button class="carousel-arrow right" aria-label="Next reviews">&#10095;</button>
+      <h2>Sushi 101</h2>
+      <p>Great sushi becomes even better when you understand what you are tasting. Learn how fish, rice, nori, aging, temperature, and technique work together.</p>
+      <div class="actions" style="margin-top:12px;">
+        <a class="btn btn-primary" href="sushi-101.html">Go to Sushi 101</a>
       </div>
     </section>
 
-    <!-- Shared footer mount (injected via app.js) -->
-    <div id="site-footer"></div>
+    <footer class="footer">
+      <div class="divider"></div>
+      <div style="display:flex; gap:14px; flex-wrap:wrap; justify-content:space-between; align-items:center;">
+        <div>© <span data-year></span> <span data-t="brand_name">Wholly Rolly!</span> • <span data-t="brand_domain">whollyrolly.com</span></div>
+        <div style="display:flex; gap:12px; flex-wrap:wrap;">
+          <a href="menu.html">Menu</a>
+          <a href="sushi-101.html">Sushi 101</a>
+          <a href="about-location.html">Location</a>
+        </div>
+      </div>
+    </footer>
   </main>
 
-  <script src="site-data.js"></script> <!-- Load data first for dynamic content -->
-  <script src="app.js"></script>      <!-- Then load script to inject header/footer and apply data -->
+  <script src="site-data.js"></script>
+  <script src="app.js"></script>
 </body>
 </html>
 
