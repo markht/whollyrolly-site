@@ -1,29 +1,53 @@
-
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Menu — Wholly Rolly! Premium Sushi</title>
-  <meta name="description" content="See Wholly Rolly! premium sushi menu, signature rolls, nigiri, fresh wasabi upgrade, traditional soy sauce, and limited premium cuts." />
+  <title>Menu — Wholly Rolly!</title>
+  <meta name="description" content="Explore the Wholly Rolly! sushi menu, including signature sushi, nigiri, sashimi, classic rolls, and Japanese drinks." />
   <link rel="stylesheet" href="styles.css" />
 </head>
-<body data-page="menu"> <!-- "menu" page identifier for script -->
-  <!-- Shared header mount -->
-  <div id="site-header"></div>
+<body data-page="menu">
+  <header class="nav">
+    <div class="container nav-inner">
+      <a class="brand" href="index.html" aria-label="Home">
+        <img class="brand-logo" src="assets/logo.png" alt="Wholly Rolly! logo" />
+        <span data-t="brand_name">Wholly Rolly!</span>
+      </a>
+      <nav class="nav-links" aria-label="Primary">
+        <a href="index.html">Home</a>
+        <a href="menu.html">Menu</a>
+        <a href="sushi-101.html">Sushi 101</a>
+        <a href="sushi-cuts-quality.html">Cuts & Quality</a>
+        <a href="sushi-aging-rice-nori.html">Aging, Rice & Nori</a>
+        <a href="about-location.html">About & Location</a>
+      </nav>
+      <a class="cta" href="menu.html"><span class="dot" aria-hidden="true"></span>View Menu</a>
+      <a class="cta mobile-cta" href="menu.html"><span class="dot" aria-hidden="true"></span>Menu</a>
+    </div>
+  </header>
 
   <main class="container">
+
     <section class="pagehead">
       <h1>Menu</h1>
-      <p data-t="menu_intro"></p> <!-- Intro text will be injected from site-data.js -->
+      <p data-t="menu_intro"></p>
     </section>
 
     <section class="section">
-      <!-- Hero/banner image container (full image visible on mobile via CSS contain) -->
-      <div class="photo has-img" data-bg="menu_banner" data-placeholder="Drop a menu banner photo in assets/menu.jpg" style="min-height:260px;"></div>
+      <div class="photo" data-bg="menu_banner" data-placeholder="Drop a menu banner photo in assets/menu.jpg" style="min-height:260px;"></div>
     </section>
 
-    <section class="menu-grid section" id="menu-sections"></section> <!-- Full menu sections will be injected here -->
+    <nav class="jump-nav" aria-label="Menu categories">
+      <span>Jump to</span>
+      <a href="#black-label">Black Label</a>
+      <a href="#sushi-rolls">Sushi Rolls</a>
+      <a href="#nigiri">Nigiri</a>
+      <a href="#desserts">Desserts</a>
+      <a href="#drinks">Drinks</a>
+    </nav>
+
+    <section class="menu-grid section" id="menu-sections"></section>
 
     <section class="section">
       <div class="card feature">
@@ -32,12 +56,22 @@
       </div>
     </section>
 
-    <!-- Shared footer mount -->
-    <div id="site-footer"></div>
+    <footer class="footer">
+      <div class="divider"></div>
+      <div style="display:flex; gap:14px; flex-wrap:wrap; justify-content:space-between; align-items:center;">
+        <div>© <span data-year></span> <span data-t="brand_name">Wholly Rolly!</span> • <span data-t="brand_domain">whollyrolly.com</span></div>
+        <div style="display:flex; gap:12px; flex-wrap:wrap;">
+          <a href="menu.html">Menu</a>
+          <a href="sushi-101.html">Sushi 101</a>
+          <a href="about-location.html">Location</a>
+        </div>
+      </div>
+    </footer>
   </main>
 
-  <script src="site-data.js"></script> <!-- Include data before script -->
-  <script src="app.js"></script>      <!-- Include main script last -->
+  <script src="site-data.js"></script>
+  <script src="app.js"></script>
 </body>
 </html>
+
 
