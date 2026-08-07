@@ -1,34 +1,25 @@
-Wholly Rolly! Website (7 pages) — Easy Edit Setup
+WHOLLY ROLLY! — INTERIM WEBSITE
 
-PREVIEW
-- Unzip
-- Open whollyrolly_final_site/index.html
+This package corrects the page/file mix-ups in the supplied site and removes
+all online-ordering links and copy.
 
-EDIT TEXT + MENU + SUSHI 101 DIALOGUE
-- Open site-data.js
-- Everything is in one file.
+FILES
+- index.html: homepage
+- menu.html: menu
+- sushi-101.html: Sushi 101 hub
+- sushi-cuts-quality.html: cuts and quality article
+- sushi-aging-rice-nori.html: aging, rice, water, vinegar, and nori article
+- about-location.html: story, contact, hours, and location
+- site-data.js: editable business details, menu items, and page copy
+- styles.css: layout and visual styling
+- app.js: page rendering
 
-EDIT IMAGES
-- Put your images in /assets/
-- Update paths in site-data.js > images
-Suggested files:
-  assets/hero_side.jpg
-  assets/menu.jpg
-  assets/sushi101.jpg
-  assets/about.jpg
-  assets/chibi_chef.png
-  assets/chibi_sidekick.png
-  assets/logo.png
+BEFORE PUBLISHING
+1. Put the existing logo and food photography in an assets folder using the
+   filenames listed under "images" in site-data.js.
+2. Replace "Hours coming soon" in site-data.js when the operating schedule is
+   finalized. Calpico currently has no price because none was shown on the
+   supplied menu board.
+3. Upload the folder contents to the web root. index.html must remain at the root.
 
-SET YOUR CAKE ORDER LINK
-- site-data.js > links > order_url
-
-SET ADDRESS / HOURS / PHONE
-- site-data.js > location + links
-- Directions link auto-builds from address.
-
-GODADDY UPLOAD
-Upload the contents of whollyrolly_final_site/ into your hosting root (often public_html):
-- all .html files
-- styles.css, app.js, site-data.js
-- assets/ folder
+Online ordering has intentionally not been included anywhere in this version.
