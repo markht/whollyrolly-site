@@ -1,132 +1,60 @@
-
-
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Sushi 101 — Wholly Rolly!</title>
-  <meta name="description" content="Learn why great sushi tastes different with Wholly Rolly! Sushi 101: fish cuts, rice, nori, fresh wasabi, soy sauce, and technique." />
+  <meta name="description" content="Learn what makes great sushi great: fish cuts, rice, nori, aging, temperature, balance, and traditional sushi etiquette." />
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body data-page="sushi101">
-  <div id="site-header"></div>
+  <header class="nav">
+    <div class="container nav-inner">
+      <a class="brand" href="index.html" aria-label="Home">
+        <img class="brand-logo" src="assets/logo.png" alt="Wholly Rolly! logo" />
+        <span data-t="brand_name">Wholly Rolly!</span>
+      </a>
+      <nav class="nav-links" aria-label="Primary">
+        <a href="index.html">Home</a>
+        <a href="menu.html">Menu</a>
+        <a href="sushi-101.html">Sushi 101</a>
+        <a href="sushi-cuts-quality.html">Cuts & Quality</a>
+        <a href="sushi-aging-rice-nori.html">Aging, Rice & Nori</a>
+        <a href="about-location.html">About & Location</a>
+      </nav>
+      <a class="cta" href="menu.html"><span class="dot" aria-hidden="true"></span>View Menu</a>
+      <a class="cta mobile-cta" href="menu.html"><span class="dot" aria-hidden="true"></span>Menu</a>
+    </div>
+  </header>
 
   <main class="container">
 
-    <!-- PAGE HEADER -->
     <section class="pagehead">
-      <h1>Sushi 101</h1>
-      <p>Everything you wanted to know about sushi — the fish, the rice, the craft. Learn what separates good sushi from exceptional sushi.</p>
+      <h1 data-t="s101_title"></h1>
+      <p data-t="s101_subtitle"></p>
     </section>
 
-    <!-- INTRO BANNER IMAGE -->
     <section class="section">
-      <div class="photo has-img" data-bg="sushi101_banner" data-placeholder="Drop a Sushi 101 banner photo in assets/sushi101.jpg" style="min-height:300px; border-radius:16px;"></div>
+      <div class="photo" data-bg="sushi101_banner" data-placeholder="Drop a Sushi 101 banner photo in assets/sushi101.jpg" style="min-height:260px;"></div>
     </section>
 
-    <!-- INTRO TEXT -->
     <section class="section">
-      <div class="card">
-        <h2>Why does any of this matter?</h2>
-        <p style="color:var(--muted); line-height:1.75; margin-top:12px;">Most people eat sushi without ever thinking about what makes one piece extraordinary and another forgettable. The difference is rarely luck — it comes down to a handful of ingredients and decisions that most restaurants don't bother explaining.</p>
-        <p style="color:var(--muted); line-height:1.75; margin-top:10px;">We built Sushi 101 because we believe an informed guest is a better guest. When you understand what goes into great sushi, you taste it differently. You notice what's there — and what isn't.</p>
-        <p style="color:var(--muted); line-height:1.75; margin-top:10px;">Pick a topic below and start wherever you're curious.</p>
-      </div>
+      <h2>Start here</h2>
+      <div class="grid3" id="s101-cards"></div>
     </section>
 
-    <!-- TOPIC CARDS -->
-    <section class="section">
-      <h2 style="margin-bottom:20px;">Choose a topic</h2>
-      <div class="s101-topics-grid">
-
-        <a class="s101-topic-card s101-topic-card--featured" href="sushi-fish.html">
-          <div class="s101-topic-img" data-placeholder="Fish 101 photo">🐟</div>
-          <div class="s101-topic-body">
-            <span class="s101-topic-label">Fish</span>
-            <h3 class="s101-topic-title">Not all fish are created equal</h3>
-            <p class="s101-topic-desc">Grades, cuts, species, and why the difference between akami and otoro is like the difference between sirloin and A5 wagyu.</p>
-            <span class="s101-topic-cta">Read more →</span>
-          </div>
-        </a>
-
-        <a class="s101-topic-card" href="sushi-rice.html">
-          <div class="s101-topic-img" data-placeholder="Rice 101 photo">🍚</div>
-          <div class="s101-topic-body">
-            <span class="s101-topic-label">Rice</span>
-            <h3 class="s101-topic-title">The foundation of great sushi</h3>
-            <p class="s101-topic-desc">The word "sushi" literally refers to the rice — not the fish. Learn why the grain, the water, and the preparation matter more than most people realize.</p>
-            <span class="s101-topic-cta">Read more →</span>
-          </div>
-        </a>
-
-        <a class="s101-topic-card" href="sushi-nori.html">
-          <div class="s101-topic-img" data-placeholder="Nori 101 photo">🌊</div>
-          <div class="s101-topic-body">
-            <span class="s101-topic-label">Nori</span>
-            <h3 class="s101-topic-title">The unsung hero of sushi</h3>
-            <p class="s101-topic-desc">Premium nori cracks cleanly, smells of ocean and toast, and quietly makes everything around it better. Most people never notice it — until it's missing.</p>
-            <span class="s101-topic-cta">Read more →</span>
-          </div>
-        </a>
-
-        <a class="s101-topic-card" href="sushi-sides.html">
-          <div class="s101-topic-img" data-placeholder="Sides 101 photo">🟢</div>
-          <div class="s101-topic-body">
-            <span class="s101-topic-label">Sides</span>
-            <h3 class="s101-topic-title">Wasabi, ginger &amp; soy sauce</h3>
-            <p class="s101-topic-desc">Over 95% of the green paste at sushi restaurants isn't real wasabi. The pink ginger is artificially dyed. And most soy sauce was brewed in a steel tank in under six months.</p>
-            <span class="s101-topic-cta">Read more →</span>
-          </div>
-        </a>
-
-      </div>
-    </section>
-
-    <!-- CHIBI DIALOGUE SECTION (existing) -->
-    <section class="limited-cuts card" id="limited-cuts">
-      <div class="limited-cuts__header">
-        <h2 data-t="lc_hook"></h2>
-        <p class="muted">A quick lesson from our instructors ✨</p>
-        <img src="assets/Fish-good-bad-ugly.png" alt="Fish quality comparison showing good, bad, and poor cuts" class="education-image" />
-      </div>
-
-      <div class="limited-cuts__grid">
-        <div class="chibi chibi--chef">
-          <div class="chibi__avatar" data-bg="chibi_chef" data-placeholder="assets/chibi_chef.png"></div>
-          <div class="bubble bubble--left">
-            <div class="bubble__title" data-t="lc_b1_title"></div>
-            <div class="bubble__text" data-t="lc_b1_text"></div>
-          </div>
-        </div>
-
-        <div class="chibi chibi--assistant">
-          <div class="bubble bubble--right">
-            <div class="bubble__title" data-t="lc_b2_title"></div>
-            <div class="bubble__text" data-t="lc_b2_text"></div>
-          </div>
-          <div class="chibi__avatar" data-bg="chibi_sidekick" data-placeholder="assets/chibi_sidekick.png"></div>
-        </div>
-
-        <div class="chibi chibi--chef">
-          <div class="chibi__avatar" data-bg="chibi_chef" data-placeholder="assets/chibi_chef.png"></div>
-          <div class="bubble bubble--left">
-            <div class="bubble__title" data-t="lc_b3_title"></div>
-            <div class="bubble__text" data-t="lc_b3_text"></div>
-          </div>
-        </div>
-
-        <div class="limited-cuts__footer">
-          <span class="spark" aria-hidden="true">✨</span>
-          <span data-t="lc_footer"></span>
-          <span class="spark" aria-hidden="true">✨</span>
+    <footer class="footer">
+      <div class="divider"></div>
+      <div style="display:flex; gap:14px; flex-wrap:wrap; justify-content:space-between; align-items:center;">
+        <div>© <span data-year></span> <span data-t="brand_name">Wholly Rolly!</span> • <span data-t="brand_domain">whollyrolly.com</span></div>
+        <div style="display:flex; gap:12px; flex-wrap:wrap;">
+          <a href="menu.html">Menu</a>
+          <a href="sushi-101.html">Sushi 101</a>
+          <a href="about-location.html">Location</a>
         </div>
       </div>
-    </section>
-
+    </footer>
   </main>
-
-  <div id="site-footer"></div>
 
   <script src="site-data.js"></script>
   <script src="app.js"></script>
