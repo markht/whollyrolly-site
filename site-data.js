@@ -25,9 +25,9 @@ window.WR_SITE_DATA = {
     "home_hero": "assets/hero.jpg",
     "home_side": "assets/hero_side.jpg",
     "menu_banner": "assets/menu.jpg",
-     location_photo: "assets/location.jpg",
     "sushi101_banner": "assets/sushi101.jpg",
     "about_banner": "assets/about.jpg"
+    "location_photo": "assets/location.jpg",
   },
   "home": {
     "headline": "The difference is in the details.",
