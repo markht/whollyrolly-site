@@ -189,7 +189,7 @@ window.WR_SITE_DATA = {
         "items": [
           {
             "name": "Mango Sticky Rice",
-            "desc": "Thai sweet sticky rice, fresh mango, coconut milk, and coconut cream. Friday\u2013Saturday, seasonal.",
+            "desc": "Thai sweet sticky rice, fresh mango, coconut milk, and coconut cream. Friday\u2013Saturday, seasonal NOT avaliable late summer to early spring..",
             "price": "$14.95"
           },
           {
