@@ -6,6 +6,7 @@
   <title>About & Location — Wholly Rolly!</title>
   <link rel="stylesheet" href="styles.css" />
 </head>
+
 <body data-page="about">
   <header class="nav">
     <div class="container nav-inner">
@@ -13,16 +14,23 @@
         <img class="brand-logo" src="assets/logo.png" alt="Wholly Rolly! logo" />
         <span data-t="brand_name">Wholly Rolly!</span>
       </a>
+
       <nav class="nav-links" aria-label="Primary">
         <a href="index.html">Home</a>
         <a href="menu.html">Menu</a>
         <a href="sushi-101.html">Sushi 101</a>
-        <a href="sushi-cuts-quality.html">Cuts & Quality</a>
-        <a href="sushi-aging-rice-nori.html">Aging, Rice & Nori</a>
-        <a href="about-location.html">About & Location</a>
+        <a href="sushi-cuts-quality.html">Cuts &amp; Quality</a>
+        <a href="sushi-aging-rice-nori.html">Aging, Rice &amp; Nori</a>
+        <a href="about-location.html">About &amp; Location</a>
       </nav>
-      <a class="cta" href="menu.html"><span class="dot" aria-hidden="true"></span>View Menu</a>
-      <a class="cta mobile-cta" href="menu.html"><span class="dot" aria-hidden="true"></span>Menu</a>
+
+      <a class="cta" href="menu.html">
+        <span class="dot" aria-hidden="true"></span>View Menu
+      </a>
+
+      <a class="cta mobile-cta" href="menu.html">
+        <span class="dot" aria-hidden="true"></span>Menu
+      </a>
     </div>
   </header>
 
@@ -33,12 +41,15 @@
       <p data-t="al_subtitle"></p>
     </section>
 
-    <section class="section"> 
-  <div class="photo" 
-     data-bg="about_banner" 
-     data-placeholder="Drop about photo in assets/about.jpg" 
-     style="min-height:240px;"></div> 
-</section>
+    <!-- ABOUT PAGE HEADER IMAGE -->
+    <section class="section">
+      <div
+        class="photo"
+        data-bg="about_banner"
+        data-placeholder="Drop an about photo in assets/about.jpg"
+        style="min-height:260px;"
+      ></div>
+    </section>
 
     <section class="section">
       <h2>About</h2>
@@ -48,12 +59,21 @@
     <section class="section menu-grid">
       <div class="card feature">
         <h2>Find Us</h2>
-        <p><strong data-t="loc_line1"></strong><br>
-           <span style="color:var(--muted)" data-t="loc_line2"></span>
+
+        <p>
+          <strong data-t="loc_line1"></strong><br>
+          <span style="color:var(--muted)" data-t="loc_line2"></span>
         </p>
 
         <div class="actions" style="margin-top:14px;">
-          <a class="btn btn-primary" data-a="maps_url" data-attr="href" target="_blank" rel="noopener">Get Directions</a>
+          <a
+            class="btn btn-primary"
+            data-a="maps_url"
+            data-attr="href"
+            target="_blank"
+            rel="noopener"
+          >Get Directions</a>
+
           <a class="btn" data-a="phone_href" data-attr="href">Call</a>
         </div>
 
@@ -63,34 +83,60 @@
         <div id="hours-lines" style="color:var(--muted); line-height:1.8;"></div>
 
         <div class="divider"></div>
+
         <h3>Parking</h3>
         <p data-t="parking_note"></p>
       </div>
 
       <div class="card feature">
         <h2>Contact</h2>
+
         <p style="color:var(--muted); line-height:1.8;">
-          Phone: <a data-a="phone_href" data-attr="href"><strong data-t="phone_text"></strong></a>
+          Phone:
+          <a data-a="phone_href" data-attr="href">
+            <strong data-t="phone_text"></strong>
+          </a>
         </p>
+
         <div class="divider"></div>
+
         <h3>Explore Wholly Rolly!</h3>
-        <p style="color:var(--muted);">See what we make and learn why the details matter.</p>
+        <p style="color:var(--muted);">
+          See what we make and learn why the details matter.
+        </p>
+
         <div class="actions" style="margin-top:14px;">
           <a class="btn btn-primary" href="menu.html">View Menu</a>
           <a class="btn" href="sushi-101.html">Sushi 101</a>
         </div>
+
         <div class="divider"></div>
+
         <h3>Map</h3>
-        <p style="color:var(--muted); margin-bottom:12px;">Tap “Get Directions” for the fastest route.</p>
-        <div class="photo"data-bg="location_photo"
-     data-placeholder="Drop location photo in assets/location.jpg" style="min-height:240px;"></div>
+        <p style="color:var(--muted); margin-bottom:12px;">
+          Tap “Get Directions” for the fastest route.
+        </p>
+
+        <!-- LOCATION / MAP IMAGE -->
+        <div
+          class="photo"
+          data-bg="location_photo"
+          data-placeholder="Drop location photo in assets/location.jpg"
+          style="min-height:240px;"
+        ></div>
       </div>
     </section>
 
     <footer class="footer">
       <div class="divider"></div>
+
       <div style="display:flex; gap:14px; flex-wrap:wrap; justify-content:space-between; align-items:center;">
-        <div>© <span data-year></span> <span data-t="brand_name">Wholly Rolly!</span> • <span data-t="brand_domain">whollyrolly.com</span></div>
+        <div>
+          © <span data-year></span>
+          <span data-t="brand_name">Wholly Rolly!</span>
+          • <span data-t="brand_domain">whollyrolly.com</span>
+        </div>
+
         <div style="display:flex; gap:12px; flex-wrap:wrap;">
           <a href="menu.html">Menu</a>
           <a href="sushi-101.html">Sushi 101</a>
@@ -98,10 +144,10 @@
         </div>
       </div>
     </footer>
+
   </main>
 
-  <script src="site-data.js"></script>
-  <script src="app.js"></script>
+  <script src="site-data.js?v=location2"></script>
+  <script src="app.js?v=location2"></script>
 </body>
 </html>
-
