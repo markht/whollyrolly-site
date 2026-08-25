@@ -117,6 +117,7 @@
     setBg("home_side", DATA.images?.home_side);
     setBg("menu_banner", DATA.images?.menu_banner);
     setBg("sushi101_banner", DATA.images?.sushi101_banner);
+    setBg("location_photo", DATA.images?.location_photo);
     setBg("about_banner", DATA.images?.about_banner);
 
     // Home
